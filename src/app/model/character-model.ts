@@ -1,4 +1,5 @@
 export interface Character {
+  name: any
   info: Info
   results: Result[]
 }

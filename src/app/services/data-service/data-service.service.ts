@@ -33,11 +33,11 @@ export class DataServiceService {
     return this.http.get<any>(this.CHARACTER_URL);
   }
 
-  getNameCharacter(): Observable<Character> {
-    return this.http.get(this.CHARACTER_URL).pipe(
+  getNameCharacter(){
+    return this.http.get<Character>(this.CHARACTER_URL).pipe(
       switchMap((character) => {
-        const nameCharacter = character.name
-
+        const nameCharacter = character.name;
+        return this.http.get(nameCharacter)
       })
     )
   }
