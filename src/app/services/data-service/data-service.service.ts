@@ -35,6 +35,8 @@ export class DataServiceService {
 
   getNameCharacter(){
     return this.http.get<Character>(this.CHARACTER_URL).pipe(
+
+      
       switchMap((character) => {
         const nameCharacter = character.name;
         return this.http.get(nameCharacter)
