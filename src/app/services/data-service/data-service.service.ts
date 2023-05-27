@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, switchMap } from 'rxjs';
-import { Character } from 'src/app/model/character-model';
+import { CharacterModel } from 'src/app/model/character-model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,13 +33,15 @@ export class DataServiceService {
     return this.http.get<any>(this.CHARACTER_URL);
   }
 
-  getNameCharacter(){
-    return this.http.get<Character>(this.CHARACTER_URL).pipe(
-
-      
-      switchMap((character) => {
-        const nameCharacter = character.name;
-        return this.http.get(nameCharacter)
+  getNameCharacter() {
+    return this.http.get<CharacterModel>(this.CHARACTER_URL).pipe(
+      switchMap((charterName) => {
+        for (let i = 1; i < 21; i++) {
+          const results= charterName.results;
+          const numberCharter = results[i];
+          const nameCharter = numberCharter.name;
+          return this.http.get(nameCharter)
+        }
       })
     )
   }

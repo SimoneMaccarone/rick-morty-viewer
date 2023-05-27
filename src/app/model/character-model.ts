@@ -1,4 +1,4 @@
-export interface Character {
+export interface CharacterModel {
   name: any
   info: Info
   results: Result[]
