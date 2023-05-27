@@ -19,7 +19,7 @@ export class DataServiceService {
 
     this.getRickMortyAPI();
     this.getCharacter();
-    this.getNameCharacter();
+    // this.getNameCharacter();
     // this.getLocation();
     // this.getEpisode();
 
@@ -31,22 +31,29 @@ export class DataServiceService {
   }
 
   // CHARACTER
-  getCharacter(): Observable<any> {
-    return this.http.get<any>(this.CHARACTER_URL);
-  }
-
-  getNameCharacter() {
-    return this.http.get<CharacterModel>(this.CHARACTER_URL).pipe(
-      switchMap((charter) => {
-        for (let i = 0; i < 21; i++) {
-          const results= charter.results;
-          const numberCharter = results[i];
-          const nameCharter = numberCharter.name;
-          return this.http.get(nameCharter)
-        }
+  getCharacter(): Observable<CharacterModel[]> {
+    return this.http.get<any>(this.CHARACTER_URL).pipe(
+      switchMap(characters=>{
+        const results= characters.results;
+        const getArray = [];
+        getArray.push(results);
+        return getArray
       })
     )
   }
+
+  // getNameCharacter() {
+  //   return this.http.get<CharacterModel>(this.CHARACTER_URL).pipe(
+  //     switchMap((model) => {
+  //       for (let i = 0; i < 21; i++) {
+  //         const results= model.results;
+  //         const numberCharter = results[i];
+  //         const nameCharter = numberCharter.name;
+  //         return this.http.get(nameCharter)
+  //       }
+  //     })
+  //   )
+  // }
 
 
 

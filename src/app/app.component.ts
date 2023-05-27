@@ -22,10 +22,10 @@ export class AppComponent {
       error: err => console.log(err)
     })
 
-    dataService.getNameCharacter().subscribe({
-      next: nameCharacter => console.log('Nomi Personaggi:', nameCharacter),
-      error: err => console.log(err)
-    })
+    // dataService.getNameCharacter().subscribe({
+    //   next: nameCharacter => console.log('Nomi Personaggi:', nameCharacter),
+    //   error: err => console.log(err)
+    // })
 
 
 
