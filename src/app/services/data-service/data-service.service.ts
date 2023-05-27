@@ -37,9 +37,9 @@ export class DataServiceService {
 
   getNameCharacter() {
     return this.http.get<CharacterModel>(this.CHARACTER_URL).pipe(
-      switchMap((charterName) => {
-        for (let i = 0; i < 20; i++) {
-          const results= charterName.results;
+      switchMap((charter) => {
+        for (let i = 0; i < 21; i++) {
+          const results= charter.results;
           const numberCharter = results[i];
           const nameCharter = numberCharter.name;
           return this.http.get(nameCharter)
