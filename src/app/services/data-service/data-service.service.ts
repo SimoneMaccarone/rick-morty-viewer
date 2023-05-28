@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, switchMap,forkJoin } from 'rxjs';
 import { CharacterModel } from 'src/app/model/character-model';
 import { BaseData } from 'src/app/model/base-data';
+import { LocationModel } from 'src/app/model/location-model';
 
 
 @Injectable({
@@ -19,9 +20,8 @@ export class DataServiceService {
 
     this.getRickMortyAPI();
     this.getCharacter();
-    // this.getNameCharacter();
-    // this.getLocation();
-    // this.getEpisode();
+    this.getLocation();
+    this.getEpisode();
 
 
   }
@@ -42,22 +42,22 @@ export class DataServiceService {
     )
   }
 
-  // getNameCharacter() {
-  //   return this.http.get<CharacterModel>(this.CHARACTER_URL).pipe(
-  //     switchMap((model) => {
-  //       for (let i = 0; i < 21; i++) {
-  //         const results= model.results;
-  //         const numberCharter = results[i];
-  //         const nameCharter = numberCharter.name;
-  //         return this.http.get(nameCharter)
-  //       }
-  //     })
-  //   )
-  // }
+  // LOCATION
+  getLocation():Observable<LocationModel[]>{
+    return this.http.get<any>(this.LOCATION_URL).pipe(
+      switchMap(locations=>{
+        const results = locations.results;
+        const getArray = [];
+        getArray.push(results);
+        return getArray;
+      })
+    )
+  }
 
+  //EPISODE
+  getEpisode():Observable<[]>{
 
-
-
+  }
 
 
 }
