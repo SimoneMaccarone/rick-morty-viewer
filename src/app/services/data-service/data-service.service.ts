@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap, forkJoin } from 'rxjs';
+import { Observable, switchMap} from 'rxjs';
 import { CharacterModel } from 'src/app/model/character-model';
 import { BaseData } from 'src/app/model/base-data';
 import { LocationModel } from 'src/app/model/location-model';
@@ -18,16 +18,13 @@ export class DataServiceService {
   readonly EPISODE_URL = 'https://rickandmortyapi.com/api/episode'
 
   constructor(private http: HttpClient) {
-
     this.getRickMortyAPI();
     this.getCharacter();
     this.getLocation();
     this.getEpisode();
-
-
   }
 
-  getRickMortyAPI(): Observable<any> {
+  getRickMortyAPI(): Observable<BaseData> {
     return this.http.get<any>(this.RICK_MORTY_URL);
   }
 

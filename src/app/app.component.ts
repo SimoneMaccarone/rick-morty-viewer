@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataServiceService } from './services/data-service/data-service.service';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { DataServiceService } from './services/data-service/data-service.service
 })
 export class AppComponent {
 character: any;
+results: any;
 
   constructor(private dataService: DataServiceService) {
 
