@@ -7,6 +7,7 @@ import { DataServiceService } from './services/data-service/data-service.service
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+character: any;
 
   constructor(private dataService: DataServiceService) {
 
@@ -18,7 +19,7 @@ export class AppComponent {
 
     // CHARACTER
     dataService.getCharacter().subscribe({
-      next: character => console.log('Personaggi:', character),
+      next: character => character ,//console.log('Personaggi:', character),
       error: err => console.log(err)
     })
 
@@ -33,8 +34,6 @@ export class AppComponent {
       next: episode => console.log('Episodi:', episode),
       error: err => console.log(err)
     })
-
-
 
 
 

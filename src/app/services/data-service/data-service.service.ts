@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap,forkJoin } from 'rxjs';
+import { Observable, switchMap, forkJoin } from 'rxjs';
 import { CharacterModel } from 'src/app/model/character-model';
 import { BaseData } from 'src/app/model/base-data';
 import { LocationModel } from 'src/app/model/location-model';
+import { EpisodeModel } from 'src/app/model/episode-model';
 
 
 @Injectable({
@@ -33,8 +34,8 @@ export class DataServiceService {
   // CHARACTER
   getCharacter(): Observable<CharacterModel[]> {
     return this.http.get<any>(this.CHARACTER_URL).pipe(
-      switchMap(characters=>{
-        const results= characters.results;
+      switchMap(characters => {
+        const results = characters.results;
         const getArray = [];
         getArray.push(results);
         return getArray
@@ -43,9 +44,9 @@ export class DataServiceService {
   }
 
   // LOCATION
-  getLocation():Observable<LocationModel[]>{
+  getLocation(): Observable<LocationModel[]> {
     return this.http.get<any>(this.LOCATION_URL).pipe(
-      switchMap(locations=>{
+      switchMap(locations => {
         const results = locations.results;
         const getArray = [];
         getArray.push(results);
@@ -55,8 +56,15 @@ export class DataServiceService {
   }
 
   //EPISODE
-  getEpisode():Observable<[]>{
-
+  getEpisode(): Observable<EpisodeModel[]> {
+    return this.http.get<any>(this.EPISODE_URL).pipe(
+      switchMap(episode => {
+        const results = episode.results;
+        const getArray = []
+        getArray.push(results);
+        return getArray;
+      })
+    )
   }
 
 
