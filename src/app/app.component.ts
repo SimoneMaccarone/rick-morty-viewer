@@ -40,11 +40,11 @@ export class AppComponent {
       error: err => console.log(err)
     })
 
-    // CHARACTER NAME
-    dataService.getCharacterName().subscribe({
-      next: characterName => console.log('Nome Personaggio', characterName),
-      error: err=> console.log(err)
-    })
+    // // CHARACTER NAME
+    // dataService.getCharacterName().subscribe({
+    //   next: characterName => console.log('Nome Personaggio', characterName),
+    //   error: err=> console.log(err)
+    // })
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
-import { CharacterModel } from 'src/app/model/character-model';
+import { CharacterModel, CharacterResult } from 'src/app/model/character-model';
 
 @Component({
   selector: 'app-character-page',
