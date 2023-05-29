@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CharacterModel } from 'src/app/model/character-model';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
 
@@ -8,6 +8,8 @@ import { DataServiceService } from 'src/app/services/data-service/data-service.s
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent {
-[x: string]: any;
+// [x: string]: any;
+
+@Input() character?: CharacterModel;
 
 }

@@ -10,8 +10,11 @@ import { CharacterModel } from 'src/app/model/character-model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  // @Input() character?: CharacterModel;
+
 
   constructor(private dataService: DataServiceService) {
+
 
     dataService.getRickMortyAPI().subscribe({
       next: rickmortyapi => console.log('Rick & Morty API:', rickmortyapi),
@@ -19,11 +22,11 @@ export class AppComponent {
     })
 
 
-    // CHARACTER
-    dataService.getCharacter().subscribe({
-      next: character => console.log('Personaggi:', character),
-      error: err => console.log(err)
-    })
+    // // CHARACTER
+    // dataService.getCharacter().subscribe({
+    //   next: character => console.log('Personaggi:', character),
+    //   error: err => console.log(err)
+    // })
 
     // LOCATION
     dataService.getLocation().subscribe({

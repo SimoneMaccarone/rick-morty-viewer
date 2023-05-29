@@ -68,22 +68,6 @@ export class DataServiceService {
 
 
   // CHARACTER NAME
-
-  // getCharacterName(): Observable<CharacterModel[]> {
-  //   return this.http.get<any>(this.CHARACTER_URL).pipe(
-  //     switchMap(characters => {
-  //       // for (let i = 0; i < 21; i++){}
-  //       const results = characters.results;
-  //       const ciccio = results[0];
-  //       const name = ciccio.name
-  //       const getArray = [];
-  //       getArray.push(name);
-  //       return getArray
-  //     })
-  //   )
-  // }
-
-
   getCharacterName(): Observable<CharacterResult[]> {
     return this.http.get<any>(this.CHARACTER_URL).pipe(
       switchMap((characters) => {
@@ -97,7 +81,6 @@ export class DataServiceService {
         const superArray=[]
         superArray.push(getArray)
         return superArray
-        // return getArray
       })
     )
   }
