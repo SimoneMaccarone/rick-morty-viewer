@@ -88,19 +88,21 @@ export class DataServiceService {
     return this.http.get<any>(this.CHARACTER_URL).pipe(
       switchMap((characters) => {
         const getArray = [];
-        // for (let i = 0; i < 21; i++){}
         for (let i = 0; i < 20; i++) {
           const results= characters.results;
           const index = results[i];
           const name = index.name;
           getArray.push(name);
         }
-        return getArray
+        const superArray=[]
+        superArray.push(getArray)
+        return superArray
+        // return getArray
       })
     )
   }
 
-  
+
 
 
 
