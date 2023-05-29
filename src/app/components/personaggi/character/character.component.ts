@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CharacterModel } from 'src/app/model/character-model';
+import { CharacterModel, CharacterResult } from 'src/app/model/character-model';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
 
 @Component({
