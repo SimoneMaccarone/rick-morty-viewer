@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DataServiceService } from './services/data-service/data-service.service';
 import { HttpClient } from '@angular/common/http'
+import { CharacterModel } from 'src/app/model/character-model';
+
 
 @Component({
   selector: 'app-root',
@@ -8,11 +10,6 @@ import { HttpClient } from '@angular/common/http'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-rickmortyapi: any;
-character: any;
-location: any;
-episode: any;
-results: any;
 
   constructor(private dataService: DataServiceService) {
 
@@ -40,7 +37,11 @@ results: any;
       error: err => console.log(err)
     })
 
-
+    // CHARACTER NAME
+    dataService.getCharacterName().subscribe({
+      next: characterName => console.log('Nome Personaggio', characterName),
+      error: err=> console.log(err)
+    })
 
 
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap} from 'rxjs';
-import { CharacterModel } from 'src/app/model/character-model';
+import { Observable, of, switchMap } from 'rxjs';
+import { CharacterModel, CharacterResult } from 'src/app/model/character-model';
 import { BaseData } from 'src/app/model/base-data';
 import { LocationModel } from 'src/app/model/location-model';
 import { EpisodeModel } from 'src/app/model/episode-model';
@@ -22,6 +22,7 @@ export class DataServiceService {
     this.getCharacter();
     this.getLocation();
     this.getEpisode();
+    this.getCharacterName();
   }
 
   getRickMortyAPI(): Observable<BaseData> {
@@ -33,10 +34,6 @@ export class DataServiceService {
     return this.http.get<any>(this.CHARACTER_URL).pipe(
       switchMap(characters => {
         const results = characters.results;
-        for (let i = 0; i < 21; i++) {
-          const element = [i];
-
-        }
         const getArray = [];
         getArray.push(results);
         return getArray
@@ -61,12 +58,53 @@ export class DataServiceService {
     return this.http.get<any>(this.EPISODE_URL).pipe(
       switchMap(episode => {
         const results = episode.results;
+
         const getArray = []
         getArray.push(results);
         return getArray;
       })
     )
   }
+
+
+  // CHARACTER NAME
+
+  // getCharacterName(): Observable<CharacterModel[]> {
+  //   return this.http.get<any>(this.CHARACTER_URL).pipe(
+  //     switchMap(characters => {
+  //       // for (let i = 0; i < 21; i++){}
+  //       const results = characters.results;
+  //       const ciccio = results[0];
+  //       const name = ciccio.name
+  //       const getArray = [];
+  //       getArray.push(name);
+  //       return getArray
+  //     })
+  //   )
+  // }
+
+
+  getCharacterName(): Observable<CharacterResult[]> {
+    return this.http.get<any>(this.CHARACTER_URL).pipe(
+      switchMap((characters) => {
+        const getArray = [];
+        // for (let i = 0; i < 21; i++){}
+        for (let i = 0; i < 20; i++) {
+          const results= characters.results;
+          const index = results[i];
+          const name = index.name;
+          getArray.push(name);
+        }
+        return getArray
+      })
+    )
+  }
+
+
+
+
+
+
 
 
 }

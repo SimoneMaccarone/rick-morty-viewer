@@ -1,7 +1,7 @@
 export interface CharacterModel {
   name: any
   info: Info
-  results: Result[]
+  results: CharacterResult[]
 }
 
 export interface Info {
@@ -11,7 +11,7 @@ export interface Info {
   prev: any
 }
 
-export interface Result {
+export interface CharacterResult {
   id: number
   name: string
   status: string
