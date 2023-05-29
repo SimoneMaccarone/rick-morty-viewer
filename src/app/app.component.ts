@@ -8,7 +8,10 @@ import { HttpClient } from '@angular/common/http'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+rickmortyapi: any;
 character: any;
+location: any;
+episode: any;
 results: any;
 
   constructor(private dataService: DataServiceService) {
@@ -21,7 +24,7 @@ results: any;
 
     // CHARACTER
     dataService.getCharacter().subscribe({
-      next: character => character ,//console.log('Personaggi:', character),
+      next: character => console.log('Personaggi:', character),
       error: err => console.log(err)
     })
 

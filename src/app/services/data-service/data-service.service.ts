@@ -33,6 +33,10 @@ export class DataServiceService {
     return this.http.get<any>(this.CHARACTER_URL).pipe(
       switchMap(characters => {
         const results = characters.results;
+        for (let i = 0; i < 21; i++) {
+          const element = [i];
+
+        }
         const getArray = [];
         getArray.push(results);
         return getArray
