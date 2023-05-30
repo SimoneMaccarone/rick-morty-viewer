@@ -3,7 +3,6 @@ import { DataServiceService } from './services/data-service/data-service.service
 import { HttpClient } from '@angular/common/http'
 import { CharacterModel } from 'src/app/model/character-model';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -27,7 +26,7 @@ export class AppComponent {
     //   next: character => console.log('Personaggi:', character),
     //   error: err => console.log(err)
     // })
-    
+
 
     // LOCATION
     dataService.getLocation().subscribe({
