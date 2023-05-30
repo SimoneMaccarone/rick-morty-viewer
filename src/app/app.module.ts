@@ -8,15 +8,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharacterComponent } from './components/personaggi/character/character.component';
 import { CharacterPageComponent } from './components/personaggi/character-page/character-page.component';
+import { LocationPageComponent } from './components/luoghi/location-page/location-page.component';
+import { LocationComponent } from './components/luoghi/location/location.component';
+import { EpisodePageComponent } from './components/episodi/episode-page/episode-page.component';
+import { EpisodeComponent } from './components/episodi/episode/episode.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { MatGridListModule} from '@angular/material/grid-list';
+
 import { CarouselModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
-import { LocationPageComponent } from './components/luoghi/location-page/location-page.component';
-import { LocationComponent } from './components/luoghi/location/location.component';
-// import { IconSetService } from '@coreui/icons-angular';
 
 
 
@@ -27,6 +30,8 @@ import { LocationComponent } from './components/luoghi/location/location.compone
     CharacterPageComponent,
     LocationPageComponent,
     LocationComponent,
+    EpisodePageComponent,
+    EpisodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import { LocationComponent } from './components/luoghi/location/location.compone
     MatButtonModule,
     CarouselModule,
     IconModule,
-    // IconSetService,
+    MatGridListModule,
 
   ],
   providers: [],
