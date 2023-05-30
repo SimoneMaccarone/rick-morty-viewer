@@ -23,6 +23,8 @@ export class DataServiceService {
     this.getLocation();
     this.getEpisode();
     this.getCharacterName();
+
+    this.getCharacter2();
   }
 
   getRickMortyAPI(): Observable<BaseData> {
@@ -40,6 +42,20 @@ export class DataServiceService {
       })
     )
   }
+
+
+  getCharacter2(): Observable<CharacterResult[]> {
+    return this.http.get<any>(this.CHARACTER_URL).pipe(
+      switchMap(character2 => {
+        const getArray = [];
+        getArray.push(character2);
+        return getArray
+      })
+    )
+  }
+
+
+
 
   // LOCATION
   getLocation(): Observable<LocationModel[]> {
@@ -73,18 +89,17 @@ export class DataServiceService {
       switchMap((characters) => {
         const getArray = [];
         for (let i = 0; i < 20; i++) {
-          const results= characters.results;
+          const results = characters.results;
           const index = results[i];
           const name = index.name;
           getArray.push(name);
         }
-        const superArray=[]
+        const superArray = []
         superArray.push(getArray)
         return superArray
       })
     )
   }
-
 
 
 

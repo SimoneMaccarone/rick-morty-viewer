@@ -11,5 +11,7 @@ export class CharacterComponent {
 // [x: string]: any;
 
 @Input() character?: CharacterModel;
+@Input() character2?: CharacterResult;
+
 
 }

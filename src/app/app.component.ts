@@ -27,6 +27,7 @@ export class AppComponent {
     //   next: character => console.log('Personaggi:', character),
     //   error: err => console.log(err)
     // })
+    
 
     // LOCATION
     dataService.getLocation().subscribe({

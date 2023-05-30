@@ -10,17 +10,20 @@ import { CharacterModel, CharacterResult } from 'src/app/model/character-model';
 export class CharacterPageComponent implements OnInit {
 
   characters: CharacterModel[] = [];
+  characters2: CharacterResult[]= [];
   page: number = 1;
 
 
   constructor(private dataService: DataServiceService) {
 
     this.loadCharacters();
+    this.loadCharacters2();
   }
 
 
   ngOnInit() {
     this.loadCharacters();
+    this.loadCharacters2();
   }
 
   // CHARACTER
@@ -31,6 +34,12 @@ export class CharacterPageComponent implements OnInit {
     })
   }
 
+  loadCharacters2() {
+    this.dataService.getCharacter2().subscribe({
+      next: characters2 => this.characters2 = characters2,
+      error: err => console.log('Errore',err)
+    })
+  }
 
 
 }
