@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of, switchMap } from 'rxjs';
 import { CharacterResult } from 'src/app/model/character-model';
 import { BaseData } from 'src/app/model/base-data';
-import { LocationModel } from 'src/app/model/location-model';
-import { EpisodeModel } from 'src/app/model/episode-model';
+import { LocationModel, LocationResult } from 'src/app/model/location-model';
+import { EpisodeModel, EpisodeResult } from 'src/app/model/episode-model';
 
 
 @Injectable({
@@ -23,9 +23,9 @@ export class DataServiceService {
     this.getCharacter();
     this.getLocation();
     this.getEpisode();
-    // this.getCharacterName();
-
   }
+
+
 
   getRickMortyAPI(): Observable<BaseData> {
     return this.http.get<any>(this.RICK_MORTY_URL);
@@ -33,7 +33,7 @@ export class DataServiceService {
 
   // CHARACTER
   getCharacter(): Observable<CharacterResult[]> {
-    return this.http.get<any>(this.CHARACTER_URL).pipe(
+    return this.http.get<any>(this.CHARACTER_URL + '?page='+ 2 ).pipe(
       switchMap(character => {
         const results = character.results;
         const getArray = [];
@@ -47,8 +47,8 @@ export class DataServiceService {
 
 
   // LOCATION
-  getLocation(): Observable<LocationModel[]> {
-    return this.http.get<any>(this.LOCATION_URL).pipe(
+  getLocation(): Observable<LocationResult[]> {
+    return this.http.get<any>(this.LOCATION_URL + '?page=' + 1).pipe(
       switchMap(locations => {
         const results = locations.results;
         const getArray = [];
@@ -59,12 +59,12 @@ export class DataServiceService {
   }
 
   //EPISODE
-  getEpisode(): Observable<EpisodeModel[]> {
-    return this.http.get<any>(this.EPISODE_URL).pipe(
+  getEpisode(): Observable<EpisodeResult[]> {
+    return this.http.get<any>(this.EPISODE_URL + '?page=' + 1).pipe(
       switchMap(episode => {
         const results = episode.results;
 
-        const getArray = []
+        const getArray = [];
         getArray.push(results);
         return getArray;
       })

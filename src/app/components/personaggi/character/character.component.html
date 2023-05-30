@@ -1,11 +1,13 @@
 
     <div class="div-card">
       <mat-card *ngIf="character" class="card">
+
         <mat-card-header>
           <span>
             <img mat-card-image src="{{character.image}}" alt="image">
           </span>
         </mat-card-header>
+
         <span>
           <mat-card-title> {{character.name}} </mat-card-title>
           <mat-card-subtitle> {{character.status}} - {{character.species}} - {{character.gender}} </mat-card-subtitle>
@@ -13,7 +15,6 @@
             <strong>{{character.location.name}}</strong>
           </p>
           <p>First seen in: <a href="{{character.episode[0]}}" target="_blank">nome episodio</a></p>
-
           <p>Creation date:
             <strong>{{character.created}}</strong>
           </p>

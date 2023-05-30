@@ -1,6 +1,6 @@
 export interface EpisodeModel {
   info: Info
-  results: Result[]
+  results: EpisodeResult[]
 }
 
 export interface Info {
@@ -10,7 +10,7 @@ export interface Info {
   prev: any
 }
 
-export interface Result {
+export interface EpisodeResult {
   id: number
   name: string
   air_date: string
