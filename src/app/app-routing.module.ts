@@ -15,4 +15,7 @@ const routes: Routes = [
     provideRouter(routes, withComponentInputBinding()),
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+
+}
