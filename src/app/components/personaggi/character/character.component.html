@@ -1,20 +1,22 @@
 <div class="div-card">
-<mat-card  *ngIf="character2" class="example-card">
-  <mat-card-header>
+  <mat-card *ngIf="character2" class="example-card">
+    <mat-card-header>
+      <span>
+        <img mat-card-image src="{{character2.image}}" alt="image">
+      </span>
+    </mat-card-header>
     <span>
-      <img mat-card-image src="{{character2.image}}"    alt="image">
+      <mat-card-title> {{character2.name}} </mat-card-title>
+      <mat-card-subtitle> {{character2.status}} - {{character2.species}} - {{character2.gender}} </mat-card-subtitle>
+      <p>Last know location:
+        <strong>{{character2.location.name}}</strong>
+      </p>
+      <p>First seen in: <a href="{{character2.episode[0]}}" target="_blank" rel="ciao">nome episodio</a></p>
+
+      <p>Creation date:
+        <strong>{{character2.location.name}}</strong>
+      </p>
+      <p> Homeworld: {{character2.origin.name}} </p>
     </span>
-  </mat-card-header>
-    <span>
-    <mat-card-title> {{character2.name}} </mat-card-title>
-    <mat-card-subtitle> {{character2.status}} </mat-card-subtitle>
-  </span>
-  <mat-card-content>
-    <p> text</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <!-- <button mat-button>LIKE</button> -->
-    <!-- <button mat-button>SHARE</button> -->
-  </mat-card-actions>
-</mat-card>
+  </mat-card>
 </div>

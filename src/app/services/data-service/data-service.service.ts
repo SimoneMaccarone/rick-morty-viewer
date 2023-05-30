@@ -13,7 +13,7 @@ import { EpisodeModel } from 'src/app/model/episode-model';
 export class DataServiceService {
 
   readonly RICK_MORTY_URL = 'https://rickandmortyapi.com/api'
-  readonly CHARACTER_URL = 'https://ricka  ndmortyapi.com/api/character'
+  readonly CHARACTER_URL = 'https://rickandmortyapi.com/api/character'
   readonly LOCATION_URL = 'https://rickandmortyapi.com/api/location'
   readonly EPISODE_URL = 'https://rickandmortyapi.com/api/episode'
 
