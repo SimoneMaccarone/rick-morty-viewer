@@ -6,10 +6,21 @@
   </mat-toolbar>
 </p>
 
+
+<nav>
+  <ul>
+    <li><a routerLink="/character-page" routerLinkActive="active" ariaCurrentWhenActive="page">Character-page</a></li>
+    <li><a routerLink="/location-page" routerLinkActive="active" ariaCurrentWhenActive="page">Location-page</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
+
+
 <div>
-  <app-character-page></app-character-page>
+  <!-- <app-character-page></app-character-page> -->
 </div>
 
 <div>
-  <app-location-page></app-location-page>
+  <!-- <app-location-page></app-location-page> -->
 </div>
