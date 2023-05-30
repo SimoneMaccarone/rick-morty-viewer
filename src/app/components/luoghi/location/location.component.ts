@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { LocationResult } from 'src/app/model/location-model';
 
 @Component({
   selector: 'app-location',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./location.component.scss']
 })
 export class LocationComponent {
+
+@Input() location?: LocationResult;
+
+constructor() { }
 
 }

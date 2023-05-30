@@ -1,1 +1,15 @@
-<h1>Location Cards</h1>
+<div class="div-card">
+  <mat-card *ngIf="location" class="card">
+
+    <mat-card-header>
+      <span>
+        <img mat-card-image src="...." alt="image">
+      </span>
+    </mat-card-header>
+
+    <span>
+      <mat-card-title> {{location.name}} </mat-card-title>
+      <mat-card-subtitle> </mat-card-subtitle>
+    </span>
+  </mat-card>
+</div>

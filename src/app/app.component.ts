@@ -27,11 +27,11 @@ export class AppComponent {
     // })
 
 
-    // LOCATION
-    dataService.getLocation().subscribe({
-      next: location => console.log('Luoghi:', location),
-      error: err => console.log(err)
-    })
+    // // LOCATION
+    // dataService.getLocation().subscribe({
+    //   next: location => console.log('Luoghi:', location),
+    //   error: err => console.log(err)
+    // })
 
     // EPISODE
     dataService.getEpisode().subscribe({
