@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, switchMap } from 'rxjs';
-import { CharacterModel, CharacterResult } from 'src/app/model/character-model';
+import { CharacterResult } from 'src/app/model/character-model';
 import { BaseData } from 'src/app/model/base-data';
 import { LocationModel } from 'src/app/model/location-model';
 import { EpisodeModel } from 'src/app/model/episode-model';
@@ -19,12 +19,12 @@ export class DataServiceService {
 
   constructor(private http: HttpClient) {
     this.getRickMortyAPI();
+
     this.getCharacter();
     this.getLocation();
     this.getEpisode();
-    this.getCharacterName();
+    // this.getCharacterName();
 
-    this.getCharacter2();
   }
 
   getRickMortyAPI(): Observable<BaseData> {
@@ -32,22 +32,10 @@ export class DataServiceService {
   }
 
   // CHARACTER
-  getCharacter(): Observable<CharacterModel[]> {
+  getCharacter(): Observable<CharacterResult[]> {
     return this.http.get<any>(this.CHARACTER_URL).pipe(
-      switchMap(characters => {
-        const results = characters.results;
-        const getArray = [];
-        getArray.push(results);
-        return getArray
-      })
-    )
-  }
-
-
-  getCharacter2(): Observable<CharacterResult[]> {
-    return this.http.get<any>(this.CHARACTER_URL).pipe(
-      switchMap(character2 => {
-        const results = character2.results;
+      switchMap(character => {
+        const results = character.results;
         const getArray = [];
         getArray.push(results);
         return getArray
@@ -84,29 +72,21 @@ export class DataServiceService {
   }
 
 
-  // CHARACTER NAME
-  getCharacterName(): Observable<CharacterResult[]> {
-    return this.http.get<any>(this.CHARACTER_URL).pipe(
-      switchMap((characters) => {
-        const getArray = [];
-        for (let i = 0; i < 20; i++) {
-          const results = characters.results;
-          const index = results[i];
-          const name = index.name;
-          getArray.push(name);
-        }
-        const superArray = []
-        superArray.push(getArray)
-        return superArray
-      })
-    )
-  }
-
-
-
-
-
-
-
-
+  // // CHARACTER NAME
+  // getCharacterName(): Observable<CharacterResult[]> {
+  //   return this.http.get<any>(this.CHARACTER_URL).pipe(
+  //     switchMap((characters) => {
+  //       const getArray = [];
+  //       for (let i = 0; i < 20; i++) {
+  //         const results = characters.results;
+  //         const index = results[i];
+  //         const name = index.name;
+  //         getArray.push(name);
+  //       }
+  //       const superArray = []
+  //       superArray.push(getArray)
+  //       return superArray
+  //     })
+  //   )
+  // }
 }

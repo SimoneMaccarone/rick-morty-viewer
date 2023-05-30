@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataServiceService } from './services/data-service/data-service.service';
 import { HttpClient } from '@angular/common/http'
-import { CharacterModel } from 'src/app/model/character-model';
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,6 @@ import { CharacterModel } from 'src/app/model/character-model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // @Input() character?: CharacterModel;
 
 
   constructor(private dataService: DataServiceService) {

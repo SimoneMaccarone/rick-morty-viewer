@@ -12,6 +12,12 @@ import { CharacterPageComponent } from './components/personaggi/character-page/c
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { CarouselModule } from '@coreui/angular';
+import { IconModule } from '@coreui/icons-angular';
+import { LocationPageComponent } from './components/luoghi/location-page/location-page.component';
+import { LocationComponent } from './components/luoghi/location/location.component';
+// import { IconSetService } from '@coreui/icons-angular';
+
 
 
 @NgModule({
@@ -19,6 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
     CharacterComponent,
     CharacterPageComponent,
+    LocationPageComponent,
+    LocationComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +36,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    CarouselModule,
+    IconModule,
+    // IconSetService,
 
   ],
   providers: [],
