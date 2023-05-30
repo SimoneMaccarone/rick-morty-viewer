@@ -1,6 +1,7 @@
-.example-card {
-  max-width: 500px;
-}
+  // .card {
+  // width: 500px;
+  // height: 250px;
+  // }
 
 img{
 width: 100%;
@@ -16,11 +17,10 @@ a{
   text-decoration:none;
 }
 mat-card{
-  // display: flex;
-  // flex-direction: row;
+  display: flex;
+  flex-direction: row;
   text-align: center;
   border-radius: 15px;
   margin: 0;
 }
-
 
