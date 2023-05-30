@@ -1,13 +1,13 @@
 <div class="div-card">
-<mat-card  *ngIf="character" class="example-card">
+<mat-card  *ngIf="character2" class="example-card">
   <mat-card-header>
     <span>
-      <img mat-card-image src=""   alt="image">
+      <img mat-card-image src="{{character2.image}}"    alt="image">
     </span>
   </mat-card-header>
     <span>
-    <mat-card-title> {{character.name}} </mat-card-title>
-    <mat-card-subtitle> {{character2?.status}} </mat-card-subtitle>
+    <mat-card-title> {{character2.name}} </mat-card-title>
+    <mat-card-subtitle> {{character2.status}} </mat-card-subtitle>
   </span>
   <mat-card-content>
     <p> text</p>

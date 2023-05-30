@@ -13,7 +13,7 @@ import { EpisodeModel } from 'src/app/model/episode-model';
 export class DataServiceService {
 
   readonly RICK_MORTY_URL = 'https://rickandmortyapi.com/api'
-  readonly CHARACTER_URL = 'https://rickandmortyapi.com/api/character'
+  readonly CHARACTER_URL = 'https://ricka  ndmortyapi.com/api/character'
   readonly LOCATION_URL = 'https://rickandmortyapi.com/api/location'
   readonly EPISODE_URL = 'https://rickandmortyapi.com/api/episode'
 
@@ -47,8 +47,9 @@ export class DataServiceService {
   getCharacter2(): Observable<CharacterResult[]> {
     return this.http.get<any>(this.CHARACTER_URL).pipe(
       switchMap(character2 => {
+        const results = character2.results;
         const getArray = [];
-        getArray.push(character2);
+        getArray.push(results);
         return getArray
       })
     )
