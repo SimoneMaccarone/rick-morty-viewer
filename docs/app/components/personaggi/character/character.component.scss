@@ -1,0 +1,31 @@
+  // .card {
+  // width: 500px;
+  // height: 250px;
+  // }
+
+img{
+width: 100%;
+background-size: cover;
+}
+
+.div-card{
+  margin: 10px;
+  align-items: center;
+  color: aliceblue;
+
+}
+a{
+  text-decoration:none;
+  color: aliceblue;
+}
+mat-card{
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  border-radius: 15px;
+  margin: 0;
+  overflow:scroll;
+
+}
+
