@@ -1,23 +1,22 @@
-  // .card {
-  // width: 500px;
-  // height: 250px;
-  // }
+
+
+  // general-container{}
 
   mat-card-header{
     margin: 0;
     padding: 0;
   }
 
+  .card {
+    margin: 10px;
+    align-items: center;
+    color: aliceblue;
+    height: auto;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-.div-card{
-  margin: 10px;
-  align-items: center;
-  color: aliceblue;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-
-}
 a{
   text-decoration:none;
   color: aliceblue;
@@ -34,5 +33,6 @@ mat-card{
 
 .info{
   margin: 15px;
-  text-align: center;
+  // text-align: center;
+
 }
