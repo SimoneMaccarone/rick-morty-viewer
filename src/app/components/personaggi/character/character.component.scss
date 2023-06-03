@@ -3,15 +3,19 @@
   // height: 250px;
   // }
 
-img{
-width: 100%;
-background-size: cover;
-}
+  mat-card-header{
+    margin: 0;
+    padding: 0;
+  }
+
 
 .div-card{
   margin: 10px;
   align-items: center;
   color: aliceblue;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
 
 }
 a{
@@ -21,7 +25,7 @@ a{
 mat-card{
   background-size: cover;
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
   text-align: center;
   border-radius: 15px;
   margin: 0;

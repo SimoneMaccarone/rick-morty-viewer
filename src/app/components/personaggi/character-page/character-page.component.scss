@@ -12,6 +12,7 @@
 
 .gesu{
   margin: 20px;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  columns: 3;
 }
