@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
 import { CharacterResult } from 'src/app/model/character-model';
 
@@ -9,8 +9,7 @@ import { CharacterResult } from 'src/app/model/character-model';
 })
 export class CharacterPageComponent implements OnInit {
 
-  characters: CharacterResult[]= [];
-  page: number = 1;
+  characters: CharacterResult[] = [];
 
 
   constructor(private dataService: DataServiceService) {
@@ -27,7 +26,7 @@ export class CharacterPageComponent implements OnInit {
   loadCharacters() {
     this.dataService.getCharacter().subscribe({
       next: characters => this.characters = characters,
-      error: err => console.log('Errore',err)
+      error: err => console.log('Errore', err)
     })
   }
 

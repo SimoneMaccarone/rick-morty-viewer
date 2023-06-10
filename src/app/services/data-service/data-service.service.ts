@@ -36,7 +36,7 @@ export class DataServiceService {
 
   // CHARACTER
   getCharacter(): Observable<CharacterResult[]> {
-    return this.http.get<any>(this.CHARACTER_URL + '?page='+ this.PAGE_COUNT ).pipe(
+    return this.http.get<any>(this.CHARACTER_URL + '?page='+ 1 ).pipe(
       switchMap(character => {
         const results = character.results;
         const getArray = [];
@@ -75,9 +75,8 @@ export class DataServiceService {
   }
 
   // NEXT PAGE
-
-  getNextPage(){
-    
+  getNextPage():any{
+    this.PAGE_COUNT++
   }
 
   // // CHARACTER NAME
