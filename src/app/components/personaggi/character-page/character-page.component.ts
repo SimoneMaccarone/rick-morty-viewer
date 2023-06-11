@@ -10,25 +10,31 @@ import { CharacterResult } from 'src/app/model/character-model';
 export class CharacterPageComponent implements OnInit {
 
   characters: CharacterResult[] = [];
-  index:number= 1
 
-  constructor(private dataService: DataServiceService) {
+
+  constructor(public dataService: DataServiceService) {
 
     this.loadCharacters();
+    // this.getSuca();
   }
 
 
   ngOnInit() {
     this.loadCharacters();
+    // this.getNextPage()
   }
 
   // CHARACTER
   loadCharacters() {
-    this.dataService.getCharacter(this.index).subscribe({
+    this.dataService.getCharacter().subscribe({
       next: characters => this.characters = characters,
       error: err => console.log('Errore', err)
     })
   }
+
+  // getSuca(){
+  //   this.index++
+  //   }
 
 
 }
