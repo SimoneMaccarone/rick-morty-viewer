@@ -10,7 +10,7 @@ import { CharacterResult } from 'src/app/model/character-model';
 export class CharacterPageComponent implements OnInit {
 
   characters: CharacterResult[] = [];
-
+  index:number= 1
 
   constructor(private dataService: DataServiceService) {
 
@@ -24,7 +24,7 @@ export class CharacterPageComponent implements OnInit {
 
   // CHARACTER
   loadCharacters() {
-    this.dataService.getCharacter().subscribe({
+    this.dataService.getCharacter(this.index).subscribe({
       next: characters => this.characters = characters,
       error: err => console.log('Errore', err)
     })

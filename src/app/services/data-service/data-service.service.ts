@@ -16,15 +16,14 @@ export class DataServiceService {
   readonly CHARACTER_URL = 'https://rickandmortyapi.com/api/character'
   readonly LOCATION_URL = 'https://rickandmortyapi.com/api/location'
   readonly EPISODE_URL = 'https://rickandmortyapi.com/api/episode'
-
-   PAGE_COUNT:number = 1;
-
+  
+  index: number= 1;
 
 
   constructor(private http: HttpClient) {
     this.getRickMortyAPI();
 
-    this.getCharacter();
+    this.getCharacter(this.index);
     this.getLocation();
     this.getEpisode();
   }
@@ -35,8 +34,8 @@ export class DataServiceService {
   }
 
   // CHARACTER
-  getCharacter(): Observable<CharacterResult[]> {
-    return this.http.get<any>(this.CHARACTER_URL + '?page='+ 1 ).pipe(
+  getCharacter(index:number): Observable<CharacterResult[]> {
+    return this.http.get<any>(this.CHARACTER_URL + '?page='+ index ).pipe(
       switchMap(character => {
         const results = character.results;
         const getArray = [];
@@ -51,7 +50,7 @@ export class DataServiceService {
 
   // LOCATION
   getLocation(): Observable<LocationResult[]> {
-    return this.http.get<any>(this.LOCATION_URL + '?page=' + this.PAGE_COUNT).pipe(
+    return this.http.get<any>(this.LOCATION_URL + '?page=' + 1).pipe(
       switchMap(locations => {
         const results = locations.results;
         const getArray = [];
@@ -63,7 +62,7 @@ export class DataServiceService {
 
   //EPISODE
   getEpisode(): Observable<EpisodeResult[]> {
-    return this.http.get<any>(this.EPISODE_URL + '?page=' + this.PAGE_COUNT).pipe(
+    return this.http.get<any>(this.EPISODE_URL + '?page=' + 1).pipe(
       switchMap(episode => {
         const results = episode.results;
 
@@ -74,10 +73,10 @@ export class DataServiceService {
     )
   }
 
-  // NEXT PAGE
-  getNextPage():any{
-    this.PAGE_COUNT++
-  }
+  // // NEXT PAGE
+  // getNextPage():any{
+  //   this.index++
+  // }
 
   // // CHARACTER NAME
   // getCharacterName(): Observable<CharacterResult[]> {
