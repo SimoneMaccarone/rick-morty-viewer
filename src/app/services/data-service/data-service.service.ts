@@ -17,7 +17,7 @@ export class DataServiceService {
   readonly LOCATION_URL = 'https://rickandmortyapi.com/api/location'
   readonly EPISODE_URL = 'https://rickandmortyapi.com/api/episode'
 
-  index: number = 1;
+  public index: number = 1;
 
 
   constructor(private http: HttpClient) {
