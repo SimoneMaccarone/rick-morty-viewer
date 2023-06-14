@@ -1,6 +1,10 @@
+<form class="example-form" [formGroup]="searchForm">
+  <mat-form-field class="example-full-width">
+    <mat-label>Search Character</mat-label>
+    <input matInput placeholder="Ex. Rick" value="" type="text" name="" formControlName="search"
+      placeholder="search character" id="">
+  </mat-form-field>
 
-
-
-<div class="page">
-  <app-character *ngFor="let character of characters" [character]="character"></app-character>
-</div>
+  <div class="page">
+    <app-character *ngFor="let character of characters" [character]="character"></app-character>
+  </div>
