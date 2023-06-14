@@ -8,6 +8,8 @@ const routes: Routes = [
   { path: 'character-page', component: CharacterPageComponent  },
   { path: 'location-page', component: LocationPageComponent },
   { path: 'episode-page', component: EpisodePageComponent },
+  { path: '**', component: CharacterPageComponent },  // Wildcard route for a 404 page
+  { path: '', component: CharacterPageComponent  },
 
 ];
 

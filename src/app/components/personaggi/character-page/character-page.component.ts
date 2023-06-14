@@ -26,7 +26,7 @@ export class CharacterPageComponent implements OnInit {
 
   // CHARACTER
   loadCharacters() {
-    this.dataService.getCharacter().subscribe({
+    this.dataService.getCharacter(1).subscribe({
       next: characters => this.characters = characters,
       error: err => console.log('Errore', err)
     })

@@ -48,7 +48,7 @@ export class DataServiceService {
 
   getNextPage() {
     console.log('sono nella getpage')
-    this.index++
+    this.index+1
   }
 
 
