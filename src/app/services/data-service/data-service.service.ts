@@ -6,6 +6,7 @@ import { BaseData } from 'src/app/model/base-data';
 import { LocationResult } from 'src/app/model/location-model';
 import { EpisodeResult } from 'src/app/model/episode-model';
 
+// https://rickandmortyapi.com/api/character/?name=snake IMPORTANTE
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,7 @@ export class DataServiceService {
     this.getCharacter();
     this.getLocation();
     this.getEpisode();
+    // this.getCharactersName();
   }
 
   getRickMortyAPI(): Observable<BaseData> {
@@ -41,6 +43,10 @@ public index: number= 1
       })
     )
   }
+  getCharactersName(name:string): Observable<any> {
+    return this.http.get<any>(this.CHARACTER_URL + '?name=' + name)
+  }
+
 
 
   // LOCATION
@@ -71,5 +77,5 @@ public index: number= 1
 
 
 
-  
+
 }
