@@ -1,10 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
+*{
+  // align-self: center;
+  // align-content: center;
+  justify-content: center;
+}
 mat-toolbar{
   display: flex;
   justify-content: center;
   height: 125px;
   font-size: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 770px) {
+  mat-toolbar{
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 470px) {
+  mat-toolbar{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 380px) {
+  mat-toolbar{
+    font-size: 10px;
+  }
 }
 
 div{
@@ -12,6 +33,7 @@ div{
   background-size: cover;
 }
 nav{
+  margin: 10px;
   display: flex;
   justify-content:center ;
 }
@@ -19,14 +41,18 @@ button{
   margin: 5px;
 }
 
+
+
+
+//          animazione figa
 // ------------------------------------------------------------------------------
 
-.supercontainer {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+// .supercontainer {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-family: "Poppins", sans-serif;
+// }
 
 .supercontainer {
   display: flex;

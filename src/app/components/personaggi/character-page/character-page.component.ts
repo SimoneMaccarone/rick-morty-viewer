@@ -15,13 +15,11 @@ export class CharacterPageComponent implements OnInit {
   constructor(public dataService: DataServiceService) {
 
     this.loadCharacters();
-    // this.getSuca();
   }
 
 
   ngOnInit() {
     this.loadCharacters();
-    // this.getNextPage()
   }
 
   // CHARACTER
@@ -32,9 +30,6 @@ export class CharacterPageComponent implements OnInit {
     })
   }
 
-  // getSuca(){
-  //   this.index++
-  //   }
 
 
 }
