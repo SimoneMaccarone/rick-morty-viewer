@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
 import { CharacterResult } from 'src/app/model/character-model';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-character-page',
@@ -11,13 +12,11 @@ export class CharacterPageComponent implements OnInit {
 
   characters: CharacterResult[] = [];
 
+  // searchForm:FormGroup =
 
   constructor(public dataService: DataServiceService) {
-
     this.loadCharacters();
-
   }
-
 
   ngOnInit() {
     this.loadCharacters();
@@ -30,6 +29,9 @@ export class CharacterPageComponent implements OnInit {
       error: err => console.log('Errore', err)
     })
   }
+
+
+
 
 }
 
