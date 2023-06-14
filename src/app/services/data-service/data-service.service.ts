@@ -17,7 +17,7 @@ export class DataServiceService {
   readonly LOCATION_URL = 'https://rickandmortyapi.com/api/location'
   readonly EPISODE_URL = 'https://rickandmortyapi.com/api/episode'
 
-  public index: number = 1;
+  public index: number = 0;
 
 
   constructor(private http: HttpClient) {
@@ -26,7 +26,7 @@ export class DataServiceService {
     this.getCharacter(this.index);
     this.getLocation();
     this.getEpisode();
-    this.getNextPage()
+    // this.getNextPage()
   }
 
 
@@ -46,10 +46,10 @@ export class DataServiceService {
     )
   }
 
-  getNextPage() {
-    console.log('sono nella getpage')
-    this.index+1
-  }
+  // getNextPage() {
+  //   console.log('sono nella getpage')
+  //   this.index+1
+  // }
 
 
 

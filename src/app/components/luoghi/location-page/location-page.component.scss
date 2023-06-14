@@ -10,8 +10,17 @@
 
 }
 
+// .gesu{
+//   margin: 20px;
+//   flex-wrap: wrap;
+//   columns: 3;
+// }
+
+
 .gesu{
-  margin: 20px;
+  justify-content: center;
+  display: flex;
+  margin-left: 40px;
+  flex-direction: row;
   flex-wrap: wrap;
-  columns: 3;
 }
