@@ -10,36 +10,26 @@ import { CharacterResult } from 'src/app/model/character-model';
 export class CharacterPageComponent implements OnInit {
 
   characters: CharacterResult[] = [];
-  page:number=1
 
 
   constructor(public dataService: DataServiceService) {
 
     this.loadCharacters();
-    this.getNextPage()
+
   }
 
 
   ngOnInit() {
     this.loadCharacters();
-    this.getNextPage()
-
-    // this.getNextPage()
-
   }
 
   // CHARACTER
   loadCharacters() {
-    this.dataService.getCharacter(this.page).subscribe({
+    this.dataService.getCharacter().subscribe({
       next: characters => this.characters = characters,
       error: err => console.log('Errore', err)
     })
   }
-  getNextPage() {
-    // console.log('sono nella getpage')
-    return this.page++
-  }
-
 
 }
 

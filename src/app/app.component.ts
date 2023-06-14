@@ -19,36 +19,11 @@ export class AppComponent {
       error: err => console.log(err)
     })
 
-
-    // // CHARACTER
-    // dataService.getCharacter().subscribe({
-    //   next: character => console.log('Personaggi:', character),
-    //   error: err => console.log(err)
-    // })
-
-
-    // // LOCATION
-    // dataService.getLocation().subscribe({
-    //   next: location => console.log('Luoghi:', location),
-    //   error: err => console.log(err)
-    // })
-
     // EPISODE
     dataService.getEpisode().subscribe({
       next: episode => console.log('Episodi:', episode),
       error: err => console.log(err)
     })
-
-    // // CHARACTER NAME
-    // dataService.getCharacterName().subscribe({
-    //   next: characterName => console.log('Nome Personaggio', characterName),
-    //   error: err=> console.log(err)
-    // })
-
-
-
-
-
 
   }
 
