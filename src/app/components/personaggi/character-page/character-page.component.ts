@@ -22,6 +22,8 @@ export class CharacterPageComponent implements OnInit {
 
   ngOnInit() {
     this.loadCharacters();
+    this.getNextPage()
+
     // this.getNextPage()
 
   }
