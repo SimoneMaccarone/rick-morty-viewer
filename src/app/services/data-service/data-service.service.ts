@@ -26,7 +26,6 @@ export class DataServiceService {
     this.getCharacter();
     this.getLocation();
     this.getEpisode();
-    // this.getCharactersName();
   }
 
   getRickMortyAPI(): Observable<BaseData> {
@@ -34,7 +33,6 @@ export class DataServiceService {
   }
 
   // CHARACTER
-
   getCharacter(): Observable<CharacterResult[]> {
     return this.http.get<any>(this.CHARACTER_URL + '?page=' + 1).pipe(
       switchMap(character => {
@@ -45,14 +43,10 @@ export class DataServiceService {
       })
     )
   }
-
+  // CHARACTERS NAMES
   getCharactersName(name:string){
     return this.http.get<any>(this.CHARACTER_URL + '?page={{this.pages}}&name=' + name)
   }
-
-  // getUsers(username:string):Observable<any>{
-  //   return this.http.get(`${this.url}/users/search?q=${username}`)
-  // }
 
   // LOCATION
   getLocation(): Observable<LocationResult[]> {

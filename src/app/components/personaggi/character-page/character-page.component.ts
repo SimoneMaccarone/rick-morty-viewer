@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
 import { CharacterResult } from 'src/app/model/character-model';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-
 import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,7 +10,10 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './character-page.component.html',
   styleUrls: ['./character-page.component.scss']
 })
+
+
 export class CharacterPageComponent implements OnInit {
+
   searchForm: FormGroup = new FormGroup({
     search: new FormControl('')
   })
@@ -21,7 +23,7 @@ export class CharacterPageComponent implements OnInit {
 
   constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder) {
     this.loadCharacters();
-    
+
     this.searchForm.get('search')?.valueChanges.pipe(
       debounceTime(1000),
       distinctUntilChanged(),
@@ -29,9 +31,7 @@ export class CharacterPageComponent implements OnInit {
     ).subscribe(
       (data) => {
         this.characterList = data!.results
-      }
-    )
-
+      })
   }
 
   ngOnInit() {

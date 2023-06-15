@@ -24,7 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CarouselModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
-import { UserComponent } from './user/user.component';
+
 
 
 
@@ -37,7 +37,6 @@ import { UserComponent } from './user/user.component';
     LocationComponent,
     EpisodePageComponent,
     EpisodeComponent,
-    UserComponent,
   ],
   imports: [
     BrowserModule,
