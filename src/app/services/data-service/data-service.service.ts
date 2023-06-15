@@ -18,9 +18,6 @@ export class DataServiceService {
   readonly LOCATION_URL = 'https://rickandmortyapi.com/api/location'
   readonly EPISODE_URL = 'https://rickandmortyapi.com/api/episode'
 
-  readonly url:string = 'https://dummyjson.com'
-
-
   constructor(private http: HttpClient) {
     this.getRickMortyAPI();
     this.getCharacter();
@@ -44,7 +41,7 @@ export class DataServiceService {
     )
   }
   // CHARACTERS NAMES
-  getCharactersName(name:string){
+  getCharactersName(name: string) {
     return this.http.get<any>(this.CHARACTER_URL + '?page={{this.pages}}&name=' + name)
   }
 
@@ -72,6 +69,7 @@ export class DataServiceService {
       })
     )
   }
+
 
 
 
