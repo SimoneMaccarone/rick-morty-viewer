@@ -1,4 +1,4 @@
-<form class="form" [formGroup]="searchForm">
+<form class="search-bar" [formGroup]="searchForm">
   <mat-form-field class="full-width">
     <mat-label>Search Character</mat-label>
     <input matInput placeholder="Ex. Rick" value="" type="text" name="" formControlName="search" placeholder="Ex. Rick"
@@ -12,8 +12,7 @@
     <app-character [character]="character"></app-character>
   </div>
 </div>
-<hr>
 
-<div class="page">
+<div class="page" *ngIf="!characterList?.length">
   <app-character *ngFor="let character of characters" [character]="character"></app-character>
 </div>
