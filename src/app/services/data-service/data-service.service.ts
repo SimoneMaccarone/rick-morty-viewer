@@ -6,8 +6,6 @@ import { BaseData } from 'src/app/model/base-data';
 import { LocationResult } from 'src/app/model/location-model';
 import { EpisodeResult } from 'src/app/model/episode-model';
 
-// https://rickandmortyapi.com/api/character/?name=snake IMPORTANTE
-
 @Injectable({
   providedIn: 'root'
 })

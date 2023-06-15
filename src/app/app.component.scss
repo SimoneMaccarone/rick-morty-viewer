@@ -1,10 +1,10 @@
 // @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-*{
-  // align-self: center;
-  // align-content: center;
+
+* {
   justify-content: center;
 }
-mat-toolbar{
+
+mat-toolbar {
   display: flex;
   justify-content: center;
   height: 125px;
@@ -12,32 +12,47 @@ mat-toolbar{
   text-align: center;
 }
 
+.title-site {
+  white-space: normal;
+}
+
 @media screen and (max-width: 770px) {
-  mat-toolbar{
-    font-size: 30px;
-  }
-}
-@media screen and (max-width: 470px) {
-  mat-toolbar{
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 380px) {
-  mat-toolbar{
-    font-size: 10px;
+  mat-toolbar {
+    font-size: 40px;
   }
 }
 
-div{
+@media screen and (max-width: 470px) {
+  mat-toolbar {
+    font-size: 30px;
+  }
+  .title-site {
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  mat-toolbar {
+    font-size: 20px;
+  }
+
+  .title-site {
+    white-space: normal;
+  }
+}
+
+div {
   // background-image: url('./assets/nirvanaRick.jpg');
   background-size: cover;
 }
-nav{
+
+nav {
   margin: 10px;
   display: flex;
-  justify-content:center ;
+  justify-content: center;
 }
-button{
+
+button {
   margin: 5px;
 }
 
@@ -46,13 +61,6 @@ button{
 
 //          animazione figa
 // ------------------------------------------------------------------------------
-
-// .supercontainer {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   font-family: "Poppins", sans-serif;
-// }
 
 .supercontainer {
   display: flex;
@@ -100,6 +108,7 @@ button{
   display: inline-block;
   transition: 0.5s;
 }
+
 .social-icon__link:hover {
   transform: translateY(-10px);
 }
@@ -169,6 +178,7 @@ button{
   0% {
     background-position-x: 1000px;
   }
+
   100% {
     background-positon-x: 0px;
   }
@@ -178,6 +188,7 @@ button{
   0% {
     background-position-x: -1000px;
   }
+
   100% {
     background-positon-x: 0px;
   }
