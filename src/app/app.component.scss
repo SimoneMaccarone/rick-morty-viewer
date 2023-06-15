@@ -8,7 +8,7 @@ mat-toolbar {
   display: flex;
   justify-content: center;
   height: 125px;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
   font-family: 'Fredoka One', cursive;
 
@@ -23,10 +23,18 @@ mat-toolbar {
     font-size: 40px;
   }
 }
+@media screen and (max-width: 570px) {
+  mat-toolbar {
+    font-size: 40px;
+  }
+  .title-site {
+    white-space: normal;
+  }
+}
 
 @media screen and (max-width: 470px) {
   mat-toolbar {
-    font-size: 30px;
+    font-size: 40px;
   }
   .title-site {
     white-space: normal;
@@ -35,7 +43,7 @@ mat-toolbar {
 
 @media screen and (max-width: 380px) {
   mat-toolbar {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .title-site {
