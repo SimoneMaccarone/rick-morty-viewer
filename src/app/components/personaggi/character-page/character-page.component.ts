@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
 import { CharacterResult } from 'src/app/model/character-model';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -40,12 +40,11 @@ export class CharacterPageComponent implements OnInit {
 
   // CHARACTER
   loadCharacters() {
-    this.dataService.getCharacter().subscribe({
+    this.dataService.getCharacter(1).subscribe({
       next: characters => this.characters = characters,
       error: err => console.log('Errore', err)
     })
   }
-
 }
 
 
