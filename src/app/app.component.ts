@@ -13,21 +13,7 @@ import { CharacterResult } from './model/character-model';
 })
 export class AppComponent {
 
-  // searchForm: FormGroup = new FormGroup({
-  //   search: new FormControl('')
-  // })
-  // public characterList: CharacterResult[]=[]
-
   constructor(private dataService: DataServiceService) {
-    // this.searchForm.get('search')?.valueChanges.pipe(
-    //   debounceTime(1000),
-    //   distinctUntilChanged(),
-    //   switchMap((data) => this.dataService.getCharactersName(data))
-    // ).subscribe(
-    //   (data) => {
-    //     this.characterList = data!.results
-    //   }
-    // )
 
     dataService.getRickMortyAPI().subscribe({
       next: rickmortyapi => console.log('Rick & Morty API:', rickmortyapi),

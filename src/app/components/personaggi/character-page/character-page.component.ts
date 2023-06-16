@@ -4,6 +4,7 @@ import { CharacterResult } from 'src/app/model/character-model';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { coerceStringArray } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'app-character-page',
@@ -20,6 +21,8 @@ export class CharacterPageComponent implements OnInit {
 
   public characterList: CharacterResult[] = []
   public characters: CharacterResult[] = [];
+
+
 
   constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder) {
     this.loadCharacters();
@@ -40,11 +43,10 @@ export class CharacterPageComponent implements OnInit {
 
   // CHARACTER
   loadCharacters() {
-    this.dataService.getCharacter(1).subscribe({
+    this.dataService.getCharacter().subscribe({
       next: characters => this.characters = characters,
       error: err => console.log('Errore', err)
     })
   }
+
 }
-
-
