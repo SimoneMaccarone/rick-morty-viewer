@@ -10,7 +10,7 @@ mat-toolbar {
   height: 125px;
   font-size: 50px;
   text-align: center;
-  font-family: 'Fredoka One', cursive;
+  // font-family: 'Fredoka One', cursive;
 
 }
 
@@ -110,7 +110,11 @@ button {
 .menu__item {
   list-style: none;
 }
-
+.nome-mio{
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
 .social-icon__link {
   font-size: 2rem;
   color: #fff;
