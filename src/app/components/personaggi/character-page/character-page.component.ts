@@ -23,9 +23,11 @@ export class CharacterPageComponent implements OnInit {
   public characters: CharacterResult[] = [];
 
 
+  // currentCharacterId:number = 0
 
   constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder) {
     this.loadCharacters();
+    // this.getCharacterId()
 
     this.searchForm.get('search')?.valueChanges.pipe(
       debounceTime(1000),
@@ -39,11 +41,21 @@ export class CharacterPageComponent implements OnInit {
 
   ngOnInit() {
     this.loadCharacters();
+    // this.getCharacterId()
   }
+
+  //  getCharacterId():number{
+  //   const characterId = this.currentCharacterId;
+  //   this.currentCharacterId++;
+  //   console.log(this.currentCharacterId)
+  //   return characterId;
+  // }
 
   // CHARACTER
   loadCharacters() {
-    this.dataService.getCharacter().subscribe({
+    // const characterId: number = this.getCharacterId();
+
+    this.dataService.getCharacter(1).subscribe({
       next: characters => this.characters = characters,
       error: err => console.log('Errore', err)
     })
