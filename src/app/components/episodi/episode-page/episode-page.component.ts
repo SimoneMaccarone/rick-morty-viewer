@@ -12,11 +12,14 @@ export class EpisodePageComponent {
   episodeList: EpisodeResult[] = []
 
   constructor(private dataService: DataServiceService) {
-    getEpisode()
+    this.loadEpisodes()
   }
 
-  getEpisode(){
-    
+  loadEpisodes(){
+    this.dataService.getEpisode().subscribe({
+      next: episode => this.episode = episode,
+      error: err=> console.log(err)
+    })
   }
 
 
