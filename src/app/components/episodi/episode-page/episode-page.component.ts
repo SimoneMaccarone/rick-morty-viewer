@@ -8,7 +8,7 @@ import { DataServiceService } from 'src/app/services/data-service/data-service.s
   styleUrls: ['./episode-page.component.scss']
 })
 export class EpisodePageComponent {
-  episode: EpisodeResult[] = []
+  episodes: EpisodeResult[] = []
   episodeList: EpisodeResult[] = []
 
   constructor(private dataService: DataServiceService) {
@@ -17,8 +17,8 @@ export class EpisodePageComponent {
 
   loadEpisodes(){
     this.dataService.getEpisode().subscribe({
-      next: episode => this.episode = episode,
-      error: err=> console.log(err)
+      next: episode => this.episodes = episode,
+      error: err=> console.log('Errore episode',err)
     })
   }
 
