@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { EpisodeResult } from 'src/app/model/episode-model';
 
 @Component({
   selector: 'app-episode',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class EpisodeComponent {
 
+  @Input() episode?: EpisodeResult
 }

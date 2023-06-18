@@ -2,18 +2,16 @@
   <mat-card *ngIf="location" class="card">
 
     <mat-card-header>
-      <span>
-        <img mat-card-image src="" alt="">
-      </span>
+      <mat-card-title class="name"> {{location.name}} </mat-card-title>
     </mat-card-header>
-
+    <!-- <hr> -->
     <span>
-
-      <mat-card-title> {{location.name}} </mat-card-title>
       <mat-card-subtitle> {{location.type}} </mat-card-subtitle>
       <mat-card-subtitle> {{location.dimension}} </mat-card-subtitle>
-      <p>Creation date: <strong> {{location.created}} </strong> </p>
-
+      <!-- <p>Creation date: <strong> {{location.created}} </strong> </p> -->
+      <p>Creation date:
+        <strong>{{location.created}}</strong>
+      </p>
     </span>
   </mat-card>
 </div>
