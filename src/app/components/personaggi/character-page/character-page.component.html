@@ -8,8 +8,6 @@
   </mat-form-field>
 </form>
 
-<button>next</button>
-
 <div cols="3" *ngIf="characterList?.length" class="page">
   <div *ngFor="let character of characterList">
     <app-character [character]="character"></app-character>

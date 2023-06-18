@@ -19,7 +19,7 @@ export class DataServiceService {
 
   constructor(private http: HttpClient) {
     this.getRickMortyAPI();
-    // this.getCharacter();
+    this.getCharacter();
     this.getLocation();
     this.getEpisode();
   }
@@ -29,8 +29,8 @@ export class DataServiceService {
   }
 
   // CHARACTER
-  getCharacter(page:number): Observable<CharacterResult[]> {
-    return this.http.get<any>(this.CHARACTER_URL + '?page=' + page).pipe(
+  getCharacter(): Observable<CharacterResult[]> {
+    return this.http.get<any>(this.CHARACTER_URL + '?page=' + 1).pipe(
       switchMap(character => {
         const results = character.results;
         const getArray = [];
@@ -44,9 +44,6 @@ export class DataServiceService {
   getCharactersName(name: string) {
     return this.http.get<any>(this.CHARACTER_URL + '?page={{this.pages}}&name=' + name)
   }
-
-
-  ////////////////////////////////////////////////////////////////////
 
   // LOCATION
   getLocation(): Observable<LocationResult[]> {
