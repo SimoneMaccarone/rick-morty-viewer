@@ -15,6 +15,7 @@ export class CharacterComponent {
   @Input() character?: CharacterResult;
   @Input() location?: LocationResult;
 
+
   searchForm: FormGroup;
   characterList: any;
 
@@ -24,5 +25,8 @@ export class CharacterComponent {
     });
 
   }
+
+
+
 }
 
