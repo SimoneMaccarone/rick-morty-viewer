@@ -11,13 +11,8 @@ mat-card-header {
   width: 300px;
   display: flex;
   flex-wrap: wrap;
+  overflow: auto;
 }
-
-a {
-  text-decoration: none;
-  color: aliceblue;
-}
-
 mat-card {
   background-size: cover;
   display: flex;
@@ -26,6 +21,17 @@ mat-card {
   margin: 0;
   overflow: auto;
 }
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.name{
+  margin: 10px;
+  font-size: 30px;
+}
+
 
 .info {
   margin: 15px;
@@ -45,9 +51,9 @@ mat-card {
 //   }
 // }
 
-// @media screen and (max-width: 380px) {
-//   .general-container {
-//     width: 50%;
-//     height: 50%;
-//   }
-// }
+@media screen and (max-width: 380px) {
+
+
+
+
+}

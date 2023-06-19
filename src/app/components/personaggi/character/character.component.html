@@ -9,16 +9,20 @@
       </mat-card-header>
 
       <span class="info">
-        <mat-card-title> {{character.name}} </mat-card-title>
+        <mat-card-title class="name"> {{character.name}} </mat-card-title>
         <mat-card-subtitle> {{character.status}} - {{character.species}} - {{character.gender}} </mat-card-subtitle>
+        <p> Homeworld:
+          <strong> {{character.origin.name}}
+          </strong>
+        </p>
+
         <p>Last know location:
           <strong>{{character.location.name}}</strong>
         </p>
-        <p>First seen in: <a href="{{character.episode[0]}}" target="_blank"></a></p>
-        <p>Creation date:
+        <!-- <p>First seen in: <a href="{{character.episode[0]}}" target="_blank"></a></p> -->
+        <!-- <p>Creation date:
           <strong>{{character.created}}</strong>
-        </p>
-        <p> Homeworld: {{character.origin.name}} </p>
+        </p> -->
       </span>
     </mat-card>
   </div>
