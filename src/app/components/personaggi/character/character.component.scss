@@ -5,14 +5,16 @@ mat-card-header {
 }
 
 .card {
-  margin: 10px;
+  margin: 20px;
   align-items: center;
   color: aliceblue;
   height: auto;
   width: 300px;
+  height: 550px;
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
+  box-shadow: 0 4px 8px rgba($color: #69f0ae, $alpha: 1);
 }
 
 mat-card {
