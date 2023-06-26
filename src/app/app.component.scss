@@ -18,38 +18,7 @@ mat-toolbar {
   white-space: normal;
 }
 
-@media screen and (max-width: 770px) {
-  mat-toolbar {
-    font-size: 40px;
-  }
-}
-@media screen and (max-width: 570px) {
-  mat-toolbar {
-    font-size: 40px;
-  }
-  .title-site {
-    white-space: normal;
-  }
-}
 
-@media screen and (max-width: 470px) {
-  mat-toolbar {
-    font-size: 40px;
-  }
-  .title-site {
-    white-space: normal;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  mat-toolbar {
-    font-size: 30px;
-  }
-
-  .title-site {
-    white-space: normal;
-  }
-}
 
 div {
   // background-image: url('./assets/nirvanaRick.jpg');
@@ -65,9 +34,6 @@ nav {
 button {
   margin: 5px;
 }
-
-
-
 
 //          animazione figa
 // ------------------------------------------------------------------------------
@@ -205,5 +171,50 @@ button {
 
   100% {
     background-positon-x: 0px;
+  }
+}
+
+
+
+// @media screen and (max-width: 770px) {
+//   mat-toolbar {
+//     // font-size: 40px;
+//   }
+// }
+@media screen and (max-width: 570px) {
+  mat-toolbar {
+    font-size: 40px;
+  }
+  .title-site {
+    white-space: normal;
+  }
+}
+
+// @media screen and (max-width: 470px) {
+//   mat-toolbar {
+//     font-size: 40px;
+//   }
+//   .title-site {
+//     white-space: normal;
+//   }
+// }
+
+@media screen and (max-width: 407px) {
+  mat-toolbar {
+    font-size: 35px;
+  }
+
+  .title-site {
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  mat-toolbar {
+    font-size: 27px;
+  }
+
+  .title-site {
+    white-space: normal;
   }
 }

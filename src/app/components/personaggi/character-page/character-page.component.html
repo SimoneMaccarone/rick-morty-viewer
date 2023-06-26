@@ -1,15 +1,15 @@
 <!-- <mat-paginator [length]="300" [pageSizeOptions]="[24, 50, 100]" aria-label="Select page"></mat-paginator> -->
 
+<!--      SEARCH BAR       -->
 <form class="search-bar" [formGroup]="searchForm">
   <mat-form-field class="full-width">
 
-    <mat-label><mat-icon aria-hidden="false" aria-label="home icon" fontIcon="search"></mat-icon>Search
-      Character</mat-label>
-    <input matInput placeholder="Ex. Rick" value="" type="text" name="" formControlName="search"
-      id="">
+    <mat-label><mat-icon aria-hidden="false" aria-label="home icon" fontIcon="search"></mat-icon>Search Character</mat-label>
+    <input matInput placeholder="Ex. Rick" value="" type="text" name="" formControlName="search" (input)="onSearch()">
   </mat-form-field>
 </form>
 
+<!--    CARDS VIEW     -->
 <div cols="3" *ngIf="characterList?.length" class="page">
   <div *ngFor="let character of characterList">
     <app-character [character]="character"></app-character>
@@ -19,6 +19,3 @@
 <div class="page" *ngIf="!characterList?.length">
   <app-character *ngFor="let character of characters" [character]="character"></app-character>
 </div>
-
-
-

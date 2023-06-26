@@ -7,9 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { coerceStringArray } from '@angular/cdk/coercion';
 import { EpisodeResult } from 'src/app/model/episode-model';
 import { DatePipe } from '@angular/common';
-
-import * as moment from 'moment';
-
+import { TitleStrategy } from '@angular/router';
 
 @Component({
   selector: 'app-character-page',
@@ -19,7 +17,7 @@ import * as moment from 'moment';
 
 
 export class CharacterPageComponent implements OnInit {
-  [x: string]: any;
+  // [x: string]: any;
 
   searchForm: FormGroup = new FormGroup({
     search: new FormControl('')
@@ -28,9 +26,9 @@ export class CharacterPageComponent implements OnInit {
   public characterList: CharacterResult[] = [];
   public characters: CharacterResult[] = [];
 
-  episodes: EpisodeResult[]=[]
+  episodes: EpisodeResult[] = []
 
-  constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder, private datePipe: DatePipe ) {
+  constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder, private datePipe: DatePipe) {
     this.loadCharacters();
 
     this.searchForm.get('search')?.valueChanges.pipe(
@@ -56,5 +54,27 @@ export class CharacterPageComponent implements OnInit {
       error: err => console.log('Errore', err)
     })
   }
+
+
+  onSearch(): void {
+    const searchTerm = this.searchForm.get('search')?.value;
+
+    if (searchTerm) {
+      this.dataService.getCharactersName(searchTerm).subscribe(
+        (data) => {
+          this.characterList = data!.results;  // Esegui altre azioni necessarie in base ai risultati della ricerca
+        },
+        (error) => {
+          console.log('Errore nella ricerca:', error);
+          this.characterList = []; // Pulisci l'array dei risultati
+          // Esegui altre azioni necessarie in caso di errore nella ricerca
+        }
+      );
+    } else {
+      this.characterList = []; // Pulisci l'array dei risultati se la ricerca è vuota
+    }
+  }
+
+
 
 }
