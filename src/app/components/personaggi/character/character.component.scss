@@ -13,7 +13,7 @@ mat-card-header {
   height: 550px;
   display: flex;
   flex-wrap: wrap;
-  overflow: auto;
+  // overflow: auto;
   box-shadow: 0 4px 8px rgba($color: #69f0ae, $alpha: 1);
 }
 
@@ -41,8 +41,15 @@ a {
   margin: 15px;
 }
 
+.date{
+  display: flex;
+}
 
-// @media screen and (max-width: 380px) {
 
+// @media screen and (max-width: 310px) {
+// .general-container{
 
 // }
+
+
+}

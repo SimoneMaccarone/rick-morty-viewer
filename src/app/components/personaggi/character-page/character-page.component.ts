@@ -5,6 +5,11 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { coerceStringArray } from '@angular/cdk/coercion';
+import { EpisodeResult } from 'src/app/model/episode-model';
+import { DatePipe } from '@angular/common';
+
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-character-page',
@@ -14,6 +19,7 @@ import { coerceStringArray } from '@angular/cdk/coercion';
 
 
 export class CharacterPageComponent implements OnInit {
+  [x: string]: any;
 
   searchForm: FormGroup = new FormGroup({
     search: new FormControl('')
@@ -22,8 +28,9 @@ export class CharacterPageComponent implements OnInit {
   public characterList: CharacterResult[] = [];
   public characters: CharacterResult[] = [];
 
+  episodes: EpisodeResult[]=[]
 
-  constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder) {
+  constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder, private datePipe: DatePipe ) {
     this.loadCharacters();
 
     this.searchForm.get('search')?.valueChanges.pipe(
@@ -38,7 +45,9 @@ export class CharacterPageComponent implements OnInit {
 
   ngOnInit() {
     this.loadCharacters();
+
   }
+
 
   // CHARACTER
   loadCharacters() {
