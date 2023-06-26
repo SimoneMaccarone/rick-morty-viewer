@@ -13,7 +13,7 @@
         <mat-card-title class="name"> {{character.name}} </mat-card-title>
 
         <div class="sub-info">
-        <span [ngStyle]="getStatusStyle(character.status)">{{ character.status}} </span><span>- {{character.species}} - {{character.gender}} </span>
+        <span class="dot" [ngStyle]="getStatusStyle(character.status)">• </span><span>{{ character.status}} - {{character.species}}</span>
         </div>
 
         <p> Homeworld: <br>

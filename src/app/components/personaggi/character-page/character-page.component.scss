@@ -2,9 +2,13 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 10px;
+  margin-top: 25px;
+  // height: 100px;
 }
 
+mat-label{
+  font-size: 20px;
+}
 .page {
   justify-content: center;
   display: flex;
