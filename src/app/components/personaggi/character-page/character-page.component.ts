@@ -80,4 +80,18 @@ export class CharacterPageComponent implements OnInit {
 
 
 
+// CARICA LA PROSSIMA PAGINA
+  loadNextPage(): void {
+    this.currentPage++;
+    this.dataService.getCharactersByPage(this.currentPage).subscribe(
+      (characters) => {
+        this.characterList = characters;
+      },
+      (error) => {
+        console.log('Errore nel caricamento della pagina:', error);
+        this.currentPage--; // Ripristina il numero di pagina precedente in caso di errore
+      }
+    );
+  }
 }
+
