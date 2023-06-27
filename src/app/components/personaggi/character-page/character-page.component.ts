@@ -66,7 +66,8 @@ export class CharacterPageComponent implements OnInit {
         },
         (error) => {
           console.log('Errore nella ricerca:', error);
-          this.characterList = []; // Pulisci l'array dei risultati
+          this.characterList = [];
+           // Pulisci l'array dei risultati
           // Esegui altre azioni necessarie in caso di errore nella ricerca
         }
       );

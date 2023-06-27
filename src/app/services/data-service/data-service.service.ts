@@ -30,7 +30,7 @@ export class DataServiceService {
 
   // CHARACTER
   getCharacter(): Observable<CharacterResult[]> {
-    return this.http.get<any>(this.CHARACTER_URL + '?page=' + 1).pipe(
+    return this.http.get<any>(this.CHARACTER_URL + '?page='+ '2').pipe(
       switchMap(character => {
         const results = character.results;
         const getArray = [];
