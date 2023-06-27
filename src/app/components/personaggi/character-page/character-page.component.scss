@@ -16,7 +16,14 @@ mat-label{
   flex-wrap: wrap;
 }
 
+.pagination{
+  display: flex;
+  justify-content: center;
+}
 
+.pagebtn{
+  margin: 5px;
+}
 .card {
   /* Stili predefiniti per la card */
   transition: transform 0.25s;
