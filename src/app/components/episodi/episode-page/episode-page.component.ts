@@ -1,6 +1,9 @@
+import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { EpisodeResult } from 'src/app/model/episode-model';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
+
 
 @Component({
   selector: 'app-episode-page',
@@ -15,13 +18,12 @@ export class EpisodePageComponent {
     this.loadEpisodes()
   }
 
-  loadEpisodes(){
+
+  loadEpisodes() {
     this.dataService.getEpisode().subscribe({
       next: episode => this.episodes = episode,
-      error: err=> console.log('Errore episode',err)
+      error: err => console.log('Errore episode', err)
     })
   }
-
-
-
+  
 }

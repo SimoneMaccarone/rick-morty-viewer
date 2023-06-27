@@ -15,3 +15,15 @@ mat-label{
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+
+.card {
+  /* Stili predefiniti per la card */
+  transition: transform 0.25s;
+}
+
+.card:hover {
+  /* Stili per l'effetto di ingrandimento */
+  transform: scale(1.1);
+}
+
