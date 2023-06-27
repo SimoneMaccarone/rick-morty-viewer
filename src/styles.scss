@@ -4,7 +4,9 @@ html,
 body {
   height: 100%;
 }
-html,*{
+
+html,
+* {
   margin: 0%;
   padding: 0%;
 }
@@ -12,4 +14,15 @@ html,*{
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.mdc-text-field {
+  background-color: rgba(#69f0ae,1) !important;
+  font-family: 'Fredoka One', cursive;
+}
+
+.ng-tns-c1607617776-0,
+.ng-tns-c1607617776-1 {
+  font-family: 'Fredoka One', cursive !important;
 }
