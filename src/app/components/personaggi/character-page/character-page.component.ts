@@ -8,25 +8,27 @@ import { coerceStringArray } from '@angular/cdk/coercion';
 import { EpisodeResult } from 'src/app/model/episode-model';
 import { DatePipe } from '@angular/common';
 import { TitleStrategy } from '@angular/router';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-character-page',
   templateUrl: './character-page.component.html',
-  styleUrls: ['./character-page.component.scss']
+  styleUrls: ['./character-page.component.scss'],
+  // animations: [],
 })
 
 
 export class CharacterPageComponent implements OnInit {
-  // [x: string]: any;
 
   searchForm: FormGroup = new FormGroup({
     search: new FormControl('')
-  })
+  });
 
   public characterList: CharacterResult[] = [];
   public characters: CharacterResult[] = [];
+  public episodes: EpisodeResult[] = [];
 
-  episodes: EpisodeResult[] = []
+  public currentPage=1;
 
   constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder, private datePipe: DatePipe) {
     this.loadCharacters();
@@ -67,7 +69,7 @@ export class CharacterPageComponent implements OnInit {
         (error) => {
           console.log('Errore nella ricerca:', error);
           this.characterList = [];
-           // Pulisci l'array dei risultati
+          // Pulisci l'array dei risultati
           // Esegui altre azioni necessarie in caso di errore nella ricerca
         }
       );

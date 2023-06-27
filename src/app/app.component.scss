@@ -10,6 +10,7 @@ mat-toolbar {
   height: 125px;
   font-size: 50px;
   text-align: center;
+  margin: 0px;
   // font-family: 'Fredoka One', cursive;
 
 }
@@ -43,7 +44,7 @@ button {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  min-height: 35%;
+  min-height: 50%;
 }
 
 .footer {

@@ -30,7 +30,7 @@ export class DataServiceService {
 
   // CHARACTER
   getCharacter(): Observable<CharacterResult[]> {
-    return this.http.get<any>(this.CHARACTER_URL + '?page='+1).pipe(
+    return this.http.get<any>(this.CHARACTER_URL +'?page='+ 1).pipe(
       switchMap(character => {
         const results = character.results;
         const getArray = [];
@@ -44,6 +44,20 @@ export class DataServiceService {
   getCharactersName(name: string) {
     return this.http.get<any>(this.CHARACTER_URL + '?page={{this.pages}}&name=' + name)
   }
+
+// CHARACTER PAGE
+  getCharactersByPage(page: number): Observable<CharacterResult[]> {
+    const url = `${this.CHARACTER_URL}?page=${page}`;
+    return this.http.get<any>(url).pipe(
+      switchMap(character => {
+        const results = character.results;
+        const getArray = [];
+        getArray.push(results);
+        return getArray;
+      })
+    );
+  }
+
 
   // LOCATION
   getLocation(): Observable<LocationResult[]> {
