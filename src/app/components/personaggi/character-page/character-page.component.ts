@@ -91,7 +91,7 @@ export class CharacterPageComponent implements OnInit {
         console.log('Errore nel caricamento della pagina:', error);
         this.currentPage--; // Ripristina il numero di pagina precedente in caso di errore
       }
-    );
+    );  
   }
 
   loadPrevPage(): void {
@@ -102,9 +102,13 @@ export class CharacterPageComponent implements OnInit {
       },
       (error) => {
         console.log('Errore nel caricamento della pagina:', error);
-        this.currentPage++; // Ripristina il numero di pagina precedente in caso di errore
+        this.currentPage++; // Ripristina il numero di pagina successiva in caso di errore
       }
     );
+    if(this.currentPage<1){
+      this.currentPage=1
+    }
+
   }
 
 
