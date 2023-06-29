@@ -5,7 +5,8 @@
 <!--      SEARCH BAR       -->
 <form class="search-bar" [formGroup]="searchForm">
   <mat-form-field class="full-width">
-    <mat-label><mat-icon aria-hidden="false"   aria-label="home icon" fontIcon="search"></mat-icon>Search Character</mat-label>
+    <mat-label><mat-icon aria-hidden="false" aria-label="home icon" fontIcon="search"></mat-icon>Search
+      Character</mat-label>
     <input matInput placeholder="Ex. Rick" value="" type="text" formControlName="search" (input)="onSearch()">
   </mat-form-field>
 </form>
@@ -30,9 +31,7 @@
 </div>
 
 <div class="pagination-bottom">
-  <button class="pagebtn" mat-raised-button  (click)="loadPrevPage()">Prev Page</button>
+  <button class="pagebtn" mat-raised-button (click)="loadPrevPage()">Prev Page</button>
   <span class="current-page">{{currentPage}}</span>
   <button class="pagebtn" mat-raised-button (click)="loadNextPage()">Next Page</button>
 </div>
-
-

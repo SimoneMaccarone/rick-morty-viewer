@@ -7,6 +7,7 @@ import { LocationResult } from 'src/app/model/location-model';
 import { DataServiceService } from 'src/app/services/data-service/data-service.service';
 
 
+
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',

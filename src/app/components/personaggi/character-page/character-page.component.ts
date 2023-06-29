@@ -4,17 +4,25 @@ import { CharacterResult } from 'src/app/model/character-model';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { coerceStringArray } from '@angular/cdk/coercion';
 import { EpisodeResult } from 'src/app/model/episode-model';
 import { DatePipe } from '@angular/common';
-import { TitleStrategy } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-character-page',
   templateUrl: './character-page.component.html',
   styleUrls: ['./character-page.component.scss'],
-  // animations: [],
+  // animations: [
+  //   trigger('cardAnimation', [
+  //     state('normal', style({
+  //       transform: 'scale(1)',
+  //     })),
+  //     state('enlarged', style({
+  //       transform: 'scale(1.2)',
+  //     })),
+  //     transition('normal <=> enlarged', animate('200ms ease-in')),
+  //   ])
+  // ]
 })
 
 
@@ -28,7 +36,17 @@ export class CharacterPageComponent implements OnInit {
   public characters: CharacterResult[] = [];
   public episodes: EpisodeResult[] = [];
 
-  public currentPage=1;
+  public currentPage = 1;
+
+  // public cardState = 'normal';
+
+  // enlargeCard() {
+  //   this.cardState = 'enlarged';
+  // }
+
+  // resetCard() {
+  //   this.cardState = 'normal';
+  // }
 
   constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder, private datePipe: DatePipe) {
     this.loadCharacters();
@@ -41,12 +59,15 @@ export class CharacterPageComponent implements OnInit {
       (data) => {
         this.characterList = data!.results
       })
+
   }
+
+
 
   ngOnInit() {
     this.loadCharacters();
-
   }
+
 
 
   // CHARACTER
@@ -80,7 +101,7 @@ export class CharacterPageComponent implements OnInit {
 
 
 
-// CARICA LA PROSSIMA PAGINA
+  // CARICA LA PROSSIMA PAGINA
   loadNextPage(): void {
     this.currentPage++;
     this.dataService.getCharactersByPage(this.currentPage).subscribe(
@@ -91,7 +112,7 @@ export class CharacterPageComponent implements OnInit {
         console.log('Errore nel caricamento della pagina:', error);
         this.currentPage--; // Ripristina il numero di pagina precedente in caso di errore
       }
-    );  
+    );
   }
 
   loadPrevPage(): void {
@@ -105,8 +126,8 @@ export class CharacterPageComponent implements OnInit {
         this.currentPage++; // Ripristina il numero di pagina successiva in caso di errore
       }
     );
-    if(this.currentPage<1){
-      this.currentPage=1
+    if (this.currentPage < 1) {
+      this.currentPage = 1
     }
 
   }
