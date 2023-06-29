@@ -219,3 +219,18 @@ button {
     white-space: normal;
   }
 }
+
+
+
+
+@media screen and (max-width: 679px) {
+  .supercontainer {
+    // border: solid 5px crimson;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 35%;
+  }
+}
+
+

@@ -12,14 +12,11 @@ html,
 }
 
 body {
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 
-  // background-image: url('./assets/sfondi/thumb.jpg');
   background-image: url('./assets/sfondi/space.jpg');
-  // background-image: url('./assets/sfondi/spacetrip.jpg');
-  // background-image: url('./assets/sfondi/lockscreen-rick-and-morty-wallpaper.webp');
-  // background-image: url('./assets/sfondi/2.jpg');
 
   background-position: center;
   background-repeat: no-repeat;
@@ -39,16 +36,8 @@ body {
 .ng-tns-c1607617776-1 {
   font-family: 'Fredoka One', cursive !important;
 }
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 565px) {
   body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-
   background-image: url('./assets/sfondi/2.jpg');
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
   }
 }
