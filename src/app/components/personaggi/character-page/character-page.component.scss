@@ -19,17 +19,24 @@ mat-label{
 .pagination{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .pagination-bottom{
   display: flex;
+  text-align: center;
   justify-content: center;
   margin-top: 10px;
 }
 
 .pagebtn{
   margin: 0px 5px;
-  background-color: transparentize($color: #ff5e00, $amount: 0);
+  background-color: transparentize($color: #ff5e0000, $amount: 0);
+}
+
+.current-page{
+color: yellow;
+font-size: 30px;
 }
 
 .card {
