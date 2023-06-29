@@ -2,10 +2,9 @@
 
 
 <div class="pagination">
-  <button class="pagebtn" mat-raised-button color="primary" (click)="loadPrevPage()">Prev Page</button>
+  <button class="pagebtn" mat-raised-button (click)="loadPrevPage()">Prev Page</button>
   <!-- <span style="color: crimson;">{{currentPage}}</span> -->
-  <button class="pagebtn" mat-raised-button color="primary" (click)="loadNextPage()">Next Page</button>
-
+  <button class="pagebtn" mat-raised-button (click)="loadNextPage()">Next Page</button>
 </div>
 
 <!--      SEARCH BAR       -->
@@ -28,5 +27,10 @@
   <app-character *ngFor="let character of characters" [character]="character" class="card"></app-character>
 </div>
 
+<div class="pagination">
+  <button class="pagebtn" mat-raised-button  (click)="loadPrevPage()">Prev Page</button>
+  <!-- <span style="color: crimson;">{{currentPage}}</span> -->
+  <button class="pagebtn" mat-raised-button (click)="loadNextPage()">Next Page</button>
+</div>
 
 

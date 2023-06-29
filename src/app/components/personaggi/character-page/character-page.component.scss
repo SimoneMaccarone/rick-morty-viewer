@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 25px;
+  margin-top: 10px;
   // height: 100px;
 }
 
@@ -22,8 +22,10 @@ mat-label{
 }
 
 .pagebtn{
-  margin: 5px;
+  margin: 0px 5px;
+  background-color: transparentize($color: #ff5e00, $amount: 0);
 }
+
 .card {
   /* Stili predefiniti per la card */
   transition: transform 0.25s;
