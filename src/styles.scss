@@ -28,9 +28,27 @@ body {
 
 
 .mdc-text-field {
-  background-color: rgba(#69f0ae, 1) !important;
-  font-family: 'Fredoka One', cursive;
+  // background-color: rgba(#69f0ae, 1) !important;
+  background-color: rgba(#0000, 0) !important;
+  // font-family: 'Fredoka One', cursive;
 }
+// .ng-tns-c3899553609-0{
+//   // color: rgb(170, 9, 9);
+// }
+
+.mdc-text-field:not(.mdc-text-field--disabled)
+ .mdc-floating-label {
+  color: #ffffff99;
+  // color: #69f0ae;
+
+}
+
+.mdc-text-field--filled .mdc-line-ripple::after {
+  // border-bottom-color: var(--mdc-theme-primary, #ffffff99);
+  border-bottom-color: var(--mdc-theme-primary, #69f0ae);
+}
+
+.mcd-
 
 .ng-tns-c1607617776-0,
 .ng-tns-c1607617776-1 {

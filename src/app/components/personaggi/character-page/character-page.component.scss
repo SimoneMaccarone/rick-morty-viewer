@@ -21,6 +21,12 @@ mat-label{
   justify-content: center;
 }
 
+.pagination-bottom{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .pagebtn{
   margin: 0px 5px;
   background-color: transparentize($color: #ff5e00, $amount: 0);
