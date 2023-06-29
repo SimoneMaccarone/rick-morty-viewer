@@ -17,8 +17,19 @@ mat-toolbar {
 
 .title-site {
   white-space: normal;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
 }
 
+.title-img{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  overflow: auto;
+}
 
 
 div {
@@ -36,7 +47,7 @@ button {
   margin: 5px;
 }
 
-.btn-nav{
+.btn-nav {
   background-color: transparentize($color: #ff5e0000, $amount: 0);
 
 }
@@ -58,7 +69,7 @@ button {
   // bottom: 0;
   width: 100%;
   // background: #3586ff;
-  background:#69f0ae;
+  background: #69f0ae;
 
   min-height: 100px;
   padding: 20px 50px;
@@ -82,11 +93,13 @@ button {
 .menu__item {
   list-style: none;
 }
-.nome-mio{
+
+.nome-mio {
   color: black;
   display: flex;
   justify-content: center;
 }
+
 .social-icon__link {
   font-size: 2rem;
   color: #fff;
@@ -162,10 +175,11 @@ button {
   animation: animate 3s linear infinite;
 }
 
-.logo{
+.logo {
   display: flex;
   justify-content: center;
 }
+
 .fa {
   // padding: 20px;
   font-size: 30px;
@@ -174,6 +188,7 @@ button {
   text-decoration: none;
   margin: 5px 2px;
 }
+
 .fa:hover {
   opacity: 0.7;
 }
@@ -182,10 +197,12 @@ button {
   // background: #125688;
   color: black;
 }
+
 .fa-github {
   // background: #125688;
   color: black;
 }
+
 .fa-youtube {
   // background: #125688;
   color: black;
@@ -213,6 +230,8 @@ button {
 }
 
 
+//-----------   MEDIA QUERY   ----------------------
+
 
 // @media screen and (max-width: 770px) {
 //   mat-toolbar {
@@ -223,28 +242,30 @@ button {
   mat-toolbar {
     font-size: 40px;
   }
+
   .title-site {
     white-space: normal;
   }
 }
 
-// @media screen and (max-width: 470px) {
-//   mat-toolbar {
-//     font-size: 40px;
-//   }
-//   .title-site {
-//     white-space: normal;
-//   }
-// }
+@media screen and (max-width: 650px) {
+  // mat-toolbar {
+  //   font-size: 40px;
+  // }
+
+  .title-img{
+    width: 400px;
+  }
+}
 
 @media screen and (max-width: 407px) {
   mat-toolbar {
     font-size: 35px;
   }
 
-  .title-site {
-    white-space: normal;
-  }
+.title-img{
+  width: 350px;
+}
 }
 
 @media screen and (max-width: 350px) {
@@ -252,13 +273,15 @@ button {
     font-size: 27px;
   }
 
-  .title-site {
-    white-space: normal;
+  .title-img{
+    width: 290px;
   }
 }
 
 
 
+
+// -----  FOOTER ----
 
 @media screen and (max-width: 679px) {
   .supercontainer {
@@ -269,5 +292,3 @@ button {
     min-height: 40%;
   }
 }
-
-
