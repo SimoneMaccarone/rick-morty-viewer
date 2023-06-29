@@ -1,11 +1,6 @@
 <!-- <mat-paginator [length]="826" [pageSizeOptions]="[20, 50, 100]" aria-label="Select page"></mat-paginator> -->
 
 
-<div class="pagination">
-  <button class="pagebtn" mat-raised-button (click)="loadPrevPage()">Prev Page</button>
-  <span class="current-page">{{currentPage}}</span>
-  <button class="pagebtn" mat-raised-button (click)="loadNextPage()">Next Page</button>
-</div>
 
 <!--      SEARCH BAR       -->
 <form class="search-bar" [formGroup]="searchForm">
@@ -14,6 +9,14 @@
     <input matInput placeholder="Ex. Rick" value="" type="text" formControlName="search" (input)="onSearch()">
   </mat-form-field>
 </form>
+
+<!--     PREV AND NEXT    -->
+<div class="pagination">
+  <button class="pagebtn" mat-raised-button (click)="loadPrevPage()">Prev Page</button>
+  <span class="current-page">{{currentPage}}</span>
+  <button class="pagebtn" mat-raised-button (click)="loadNextPage()">Next Page</button>
+</div>
+
 
 <!--    CARDS VIEW     -->
 <div cols="3" *ngIf="characterList?.length" class="page">
