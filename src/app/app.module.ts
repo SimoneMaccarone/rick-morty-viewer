@@ -27,6 +27,7 @@ import { MatTreeModule } from '@angular/material/tree';
 
 import { CarouselModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
+import { PageNotFound404Component } from './page-not-found404/page-not-found404.component';
 
 
 
@@ -40,6 +41,7 @@ import { IconModule } from '@coreui/icons-angular';
     LocationComponent,
     EpisodePageComponent,
     EpisodeComponent,
+    PageNotFound404Component,
   ],
   imports: [
     BrowserModule,
