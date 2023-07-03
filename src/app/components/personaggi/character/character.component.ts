@@ -36,6 +36,7 @@ export class CharacterComponent {
 
   searchForm: FormGroup;
   characterList: any;
+  isFlipped = false;
 
   constructor(private dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder,) {
 
@@ -73,5 +74,8 @@ export class CharacterComponent {
     // Esegui le azioni desiderate quando si fa clic sulla card
   }
 
+  flipCard(): void {
+    this.isFlipped = !this.isFlipped;
+  }
 }
 

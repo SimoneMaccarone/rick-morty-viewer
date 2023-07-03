@@ -1,31 +1,39 @@
-<div class="general-container" [@cardHover]="cardState" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onClick()">
+<div class="general-container" [@cardHover]="cardState" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"
+  (click)="onClick()" (click)="flipCard()">
   <div class="div-card">
-    <mat-card *ngIf="character" class="card">
+    <!-- <div class="flip-card" [class.flipped]="isFlipped"> -->
+      <!-- <div class="front"> -->
+        <mat-card *ngIf="character" class="card">
 
-      <mat-card-header>
-        <span class="img-character">
-          <img mat-card-image src="{{character.image}}" alt="image">
-        </span>
-      </mat-card-header>
-      <span class="info">
+          <mat-card-header>
+            <span class="img-character">
+              <img mat-card-image src="{{character.image}}" alt="image">
+            </span>
+          </mat-card-header>
+          <span class="info">
 
 
-        <mat-card-title class="name" style="color: #69f0ae;"> {{character.name}} </mat-card-title>
+            <mat-card-title class="name" style="color: #69f0ae;"> {{character.name}} </mat-card-title>
 
-        <div class="sub-info">
-        <span class="dot" [ngStyle]="getStatusStyle(character.status)">• </span><span>{{ character.status}} - {{character.species}}</span>
-        </div>
+            <div class="sub-info">
+              <span class="dot" [ngStyle]="getStatusStyle(character.status)">• </span><span>{{ character.status}} -
+                {{character.species}}</span>
+            </div>
 
-        <p> Homeworld: <br>
-          <strong> {{character.origin.name}}
-          </strong>
-        </p>
+            <p> Homeworld: <br>
+              <strong> {{character.origin.name}}
+              </strong>
+            </p>
 
-        <!-- <p>First seen in: <a href="{{character.episode[0]}}" target="_blank"></a></p> -->
-        <!-- <p>Creation date: <br>
+            <!-- <p>First seen in: <a href="{{character.episode[0]}}" target="_blank"></a></p> -->
+            <!-- <p>Creation date: <br>
           <strong>{{character.created | date:'dd-MM-yyyy'}}</strong>
         </p> -->
-      </span>
-    </mat-card>
-  </div>
+          </span>
+        </mat-card>
+      </div>
+
+    <!-- </div> -->
+    <!-- <div class="back"> -->
+  <!-- </div> -->
 </div>
