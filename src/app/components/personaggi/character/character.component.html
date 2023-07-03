@@ -1,4 +1,4 @@
-<div class="general-container">
+<div class="general-container" [@cardHover]="cardState" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onClick()">
   <div class="div-card">
     <mat-card *ngIf="character" class="card">
 

@@ -12,6 +12,7 @@ export interface Info {
 }
 
 export interface CharacterResult {
+  cardState: string
   id: number
   name: string
   status: string

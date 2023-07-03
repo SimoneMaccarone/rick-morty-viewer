@@ -6,23 +6,11 @@ import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { EpisodeResult } from 'src/app/model/episode-model';
 import { DatePipe } from '@angular/common';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-character-page',
   templateUrl: './character-page.component.html',
   styleUrls: ['./character-page.component.scss'],
-  // animations: [
-  //   trigger('cardAnimation', [
-  //     state('normal', style({
-  //       transform: 'scale(1)',
-  //     })),
-  //     state('enlarged', style({
-  //       transform: 'scale(1.2)',
-  //     })),
-  //     transition('normal <=> enlarged', animate('200ms ease-in')),
-  //   ])
-  // ]
 })
 
 
@@ -38,15 +26,6 @@ export class CharacterPageComponent implements OnInit {
 
   public currentPage = 1;
 
-  // public cardState = 'normal';
-
-  // enlargeCard() {
-  //   this.cardState = 'enlarged';
-  // }
-
-  // resetCard() {
-  //   this.cardState = 'normal';
-  // }
 
   constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder, private datePipe: DatePipe) {
     this.loadCharacters();
