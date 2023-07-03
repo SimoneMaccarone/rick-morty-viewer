@@ -129,7 +129,7 @@ button {
 .menu__link:hover {
   opacity: 1;
 }
-
+//--------------------------------------------------
 .footer p {
   color: #fff;
   margin: 15px 0 10px 0;
@@ -194,19 +194,8 @@ button {
   opacity: 0.7;
 }
 
-.fa-instagram {
-  // background: #125688;
-  color: black;
-}
-
-.fa-github {
-  // background: #125688;
-  color: black;
-}
-
-.fa-youtube {
-  // background: #125688;
-  color: black;
+.fa-instagram,.fa-github,.fa-youtube,.fa-linkedin {
+  color: rgb(14, 14, 14);
 }
 
 
@@ -235,56 +224,38 @@ button {
 
 
 @media screen and (max-width: 570px) {
-  mat-toolbar {
-    font-size: 40px;
-  }
 
-  .title-site {
-    white-space: normal;
-  }
 }
 
-@media screen and (max-width: 650px) {
-  // mat-toolbar {
-  //   font-size: 40px;
-  // }
-
-  .title-img{
-    width: 400px;
-  }
-}
 
 @media screen and (max-width: 407px) {
-  mat-toolbar {
-    font-size: 35px;
-  }
 
-.title-img{
-  width: 350px;
-}
 }
 
-@media screen and (max-width: 350px) {
-  mat-toolbar {
-    font-size: 27px;
-  }
+@media screen  and (max-width: 350px) {
 
-  .title-img{
-    width: 290px;
-  }
 }
-
-
 
 
 // -----  FOOTER ----
 
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 679px){
   .supercontainer {
     // border: solid 5px crimson;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     min-height: 40%;
+  }
+}
+
+@media screen and (max-height: 800px){
+  .supercontainer {
+    // border: solid 5px crimson;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    // min-height: 40%;
+    margin-top: 125px;
   }
 }

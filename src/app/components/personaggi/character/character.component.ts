@@ -21,7 +21,6 @@ import { DataServiceService } from 'src/app/services/data-service/data-service.s
       })),
       state('hover', style({
         transform: 'scale(1.1)',
-        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)'
       })),
       transition('normal <=> hover', animate('200ms ease-in-out'))
     ])
