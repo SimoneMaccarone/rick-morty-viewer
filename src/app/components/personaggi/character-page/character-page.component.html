@@ -12,12 +12,11 @@
 </form>
 
 <!--     PREV AND NEXT    -->
-<div class="pagination">
+<div class="pagination" *ngIf="!characterNotFound">
   <button class="pagebtn" mat-raised-button (click)="loadPrevPage()">Prev Page</button>
   <span class="current-page">{{currentPage}}</span>
   <button class="pagebtn" mat-raised-button (click)="loadNextPage()">Next Page</button>
 </div>
-
 
 <!--    CARDS VIEW     -->
 <div cols="3" *ngIf="characterList?.length" class="page">
@@ -26,12 +25,22 @@
   </div>
 </div>
 
-<div class="page" *ngIf="!characterList?.length">
-  <app-character *ngFor="let character of characters" [character]="character" class="card" ></app-character>
+<div class="page" *ngIf="!characterList?.length && !characterNotFound">
+  <app-character *ngFor="let character of characters" [character]="character" class="card"></app-character>
 </div>
 
-<div class="pagination-bottom">
-  <button class="pagebtn" mat-raised-button (click)="loadPrevPage()"> <--</button>
-  <span class="current-page">{{currentPage}}</span>
-  <button class="pagebtn" mat-raised-button (click)="loadNextPage()"> --></button>
+
+<!-- NOT FOUND 404 -->
+<div *ngIf="characterNotFound" class="characterNotFound">
+  <img class="NotFound404" src="./assets/404/404error.png" alt="Character Not Found">
+  <h2 class="text404">Character not Found, try again</h2>
 </div>
+
+
+
+<div class="pagination-bottom" *ngIf="!characterNotFound">
+  <button class="pagebtn" mat-raised-button (click)="loadPrevPage()"><--</button>
+  <span class="current-page">{{currentPage}}</span>
+  <button class="pagebtn" mat-raised-button (click)="loadNextPage()">--></button>
+</div>
+

@@ -4,17 +4,6 @@
   justify-content: center;
 }
 
-mat-toolbar {
-  display: flex;
-  justify-content: center;
-  height: 125px;
-  font-size: 50px;
-  text-align: center;
-  margin: 0px;
-  // font-family: 'Fredoka One', cursive;
-
-}
-
 .title-site {
   white-space: normal;
   display: flex;
@@ -29,12 +18,6 @@ mat-toolbar {
   margin-right: auto;
   width: 500px;
   overflow: auto;
-}
-
-
-div {
-  // background-image: url('./assets/nirvanaRick.jpg');
-  background-size: cover;
 }
 
 nav {

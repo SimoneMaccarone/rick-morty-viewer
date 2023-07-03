@@ -6,7 +6,6 @@ import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { EpisodeResult } from 'src/app/model/episode-model';
 import { DatePipe } from '@angular/common';
-import { coerceStringArray } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'app-character-page',
@@ -26,6 +25,7 @@ export class CharacterPageComponent implements OnInit {
   public episodes: EpisodeResult[] = [];
 
   public currentPage = 1;
+  characterNotFound: boolean = false;
 
 
   constructor(public dataService: DataServiceService, private http: HttpClient, private formBuilder: FormBuilder, private datePipe: DatePipe) {
@@ -61,70 +61,68 @@ export class CharacterPageComponent implements OnInit {
 
 
   onSearch(): void {
+
     const searchTerm = this.searchForm.get('search')?.value;
 
     if (searchTerm) {
       this.dataService.getCharactersName(searchTerm).subscribe(
         (data) => {
           this.characterList = data!.results;  // Esegui altre azioni necessarie in base ai risultati della ricerca
+          this.characterNotFound= false;
         },
         (error) => {
           console.log('Errore nella ricerca:', error);
-          this.characterList = [];
-          this.currentPage =1;
-          this.characterNotFound()
-          // Pulisci l'array dei risultati
-          // Esegui altre azioni necessarie in caso di errore nella ricerca
+          this.characterList = [];// Pulisci l'array dei risultati
+          this.currentPage = 1; // ritorna alla prima pagina
+          this.characterNotFound= true;
         }
       );
     } else {
       this.characterList = []; // Pulisci l'array dei risultati se la ricerca è vuota
-      this.currentPage =1;
-      this.characterNotFound();
+      this.currentPage = 1;
+    };
+
+    if(searchTerm===''){
+      this.characterNotFound= false;
     }
   }
-
-
-  characterNotFound(){
-    console.log('SUCAAAAAAA');
-    const tag= document.createElement('h1');
-    const text = document.createTextNode('Character not found, try again');
-    tag.appendChild(text);
-
-  }
-
-
 
   // CARICA LA PROSSIMA PAGINA
   loadNextPage(): void {
-    this.currentPage++;
-    this.dataService.getCharactersByPage(this.currentPage).subscribe(
-      (characters) => {
-        this.characterList = characters;
-      },
-      (error) => {
-        console.log('Errore nel caricamento della pagina:', error);
-        this.currentPage--; // Ripristina il numero di pagina precedente in caso di errore
-      }
-    );
-  }
+    // this.characterNotFound= false;
 
-  loadPrevPage(): void {
-    this.currentPage--;
-    this.dataService.getCharactersByPage(this.currentPage).subscribe(
-      (characters) => {
-        this.characterList = characters;
-      },
-      (error) => {
-        console.log('Errore nel caricamento della pagina:', error);
-        this.currentPage++; // Ripristina il numero di pagina successiva in caso di errore
-      }
-    );
-    if (this.currentPage < 1) {
-      this.currentPage = 1
+    if (this.currentPage < 42) {
+      this.currentPage++;
+      this.dataService.getCharactersByPage(this.currentPage).subscribe(
+        (characters) => {
+          this.characterList = characters;
+        },
+        (error) => {
+          console.log('Errore nel caricamento della pagina:', error);
+          this.currentPage--; // Ripristina il numero di pagina precedente in caso di errore
+        }
+      );
     }
 
   }
+
+  loadPrevPage(): void {
+    // this.characterNotFound= false;
+
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.dataService.getCharactersByPage(this.currentPage).subscribe(
+        (characters) => {
+          this.characterList = characters;
+        },
+        (error) => {
+          console.log('Errore nel caricamento della pagina:', error);
+          this.currentPage++; // Ripristina il numero di pagina successiva in caso di errore
+        }
+      );
+    }
+  }
+
 
 
 }
