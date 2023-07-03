@@ -6,6 +6,7 @@ import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { EpisodeResult } from 'src/app/model/episode-model';
 import { DatePipe } from '@angular/common';
+import { coerceStringArray } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'app-character-page',
@@ -45,6 +46,7 @@ export class CharacterPageComponent implements OnInit {
 
   ngOnInit() {
     this.loadCharacters();
+    // this.onSearch()
   }
 
 
@@ -69,13 +71,26 @@ export class CharacterPageComponent implements OnInit {
         (error) => {
           console.log('Errore nella ricerca:', error);
           this.characterList = [];
+          this.currentPage =1;
+          this.characterNotFound()
           // Pulisci l'array dei risultati
           // Esegui altre azioni necessarie in caso di errore nella ricerca
         }
       );
     } else {
       this.characterList = []; // Pulisci l'array dei risultati se la ricerca è vuota
+      this.currentPage =1;
+      this.characterNotFound();
     }
+  }
+
+
+  characterNotFound(){
+    console.log('SUCAAAAAAA');
+    const tag= document.createElement('h1');
+    const text = document.createTextNode('Character not found, try again');
+    tag.appendChild(text);
+
   }
 
 
