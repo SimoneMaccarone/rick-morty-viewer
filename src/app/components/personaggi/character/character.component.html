@@ -1,8 +1,7 @@
 <div class="general-container" [@cardHover]="cardState" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"
   (click)="onClick()" (click)="flipCard()">
+
   <div class="div-card">
-    <!-- <div class="flip-card" [class.flipped]="isFlipped"> -->
-      <!-- <div class="front"> -->
         <mat-card *ngIf="character" class="card">
 
           <mat-card-header>
@@ -32,8 +31,5 @@
           </span>
         </mat-card>
       </div>
-
-    <!-- </div> -->
-    <!-- <div class="back"> -->
-  <!-- </div> -->
+      
 </div>
