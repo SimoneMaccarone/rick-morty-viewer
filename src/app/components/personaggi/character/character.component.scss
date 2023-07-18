@@ -8,13 +8,13 @@ mat-card-header {
   margin: 20px;
   align-items: center;
   color: aliceblue;
-  height: auto;
+  // height: auto;
   width: 300px;
-  height: 540px;
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0 4px 8px rgba($color: #69f0ae, $alpha: 1);
-  // overflow: auto;
+  // height: 540px;
+  overflow:auto;
 }
 
 mat-card {
