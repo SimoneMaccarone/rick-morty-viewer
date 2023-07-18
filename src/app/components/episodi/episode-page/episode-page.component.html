@@ -1,4 +1,15 @@
-<!-- <img src="./assets/nirvanaRick.jpg" alt=""> -->
+
+
+<!--     PREV AND NEXT    -->
+<div class="pagination">
+  <button class="pagebtn" mat-raised-button (click)="loadPrevPage()">Prev Page</button>
+  <span class="current-page">{{currentPage}}</span>
+  <button class="pagebtn" mat-raised-button (click)="loadNextPage()">Next Page</button>
+</div>
+
+
 <div class="page">
   <app-episode *ngFor="let episode of episodes" [episode]="episode"></app-episode>
 </div>
+
+

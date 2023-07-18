@@ -59,6 +59,9 @@ export class DataServiceService {
   }
 
 
+//-----------------------------------------------------------------------------------
+
+
   // LOCATION
   getLocation(): Observable<LocationResult[]> {
     return this.http.get<any>(this.LOCATION_URL + '?page=' + 1).pipe(
@@ -71,12 +74,16 @@ export class DataServiceService {
     )
   }
 
+
+//-----------------------------------------------------------------------------------
+
+
+
   //EPISODE
   getEpisode(): Observable<EpisodeResult[]> {
     return this.http.get<any>(this.EPISODE_URL + '?page=' + 1).pipe(
       switchMap(episode => {
         const results = episode.results;
-
         const getArray = [];
         getArray.push(results);
         return getArray;
@@ -84,6 +91,19 @@ export class DataServiceService {
     )
   }
 
+
+  // EPISODE PAGE
+  getEpisodesByPage(page: number): Observable<EpisodeResult[]> {
+    const url = `${this.EPISODE_URL}?page=${page}`;
+    return this.http.get<any>(url).pipe(
+      switchMap(episode => {
+        const results = episode.results;
+        const getArray = [];
+        getArray.push(results);
+        return getArray;
+      })
+    );
+  }
 
 
 

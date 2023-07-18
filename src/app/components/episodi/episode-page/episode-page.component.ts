@@ -13,11 +13,18 @@ import { DataServiceService } from 'src/app/services/data-service/data-service.s
 export class EpisodePageComponent {
   episodes: EpisodeResult[] = []
   episodeList: EpisodeResult[] = []
+  public currentPage = 1;
 
   constructor(private dataService: DataServiceService) {
-    this.loadEpisodes()
+    this.loadEpisodes();
   }
 
+
+
+
+  ngOnInit() {
+    this.loadEpisodes();
+  }
 
   loadEpisodes() {
     this.dataService.getEpisode().subscribe({
@@ -25,5 +32,39 @@ export class EpisodePageComponent {
       error: err => console.log('Errore episode', err)
     })
   }
-  
+
+
+  // CARICA LA PROSSIMA PAGINA
+  loadNextPage(): void {
+
+    if (this.currentPage < 42) {
+      this.currentPage++;
+      this.dataService.getEpisodesByPage(this.currentPage).subscribe(
+        (episodes) => {
+          this.episodeList = episodes;
+        },
+        (error) => {
+          console.log('Errore nel caricamento della pagina:', error);
+          this.currentPage--; // Ripristina il numero di pagina precedente in caso di errore
+        }
+      );
+    }
+
+  }
+
+  loadPrevPage(): void {
+
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.dataService.getEpisodesByPage(this.currentPage).subscribe(
+        (episodes) => {
+          this.episodeList = episodes;
+        },
+        (error) => {
+          console.log('Errore nel caricamento della pagina:', error);
+          this.currentPage++; // Ripristina il numero di pagina successiva in caso di errore
+        }
+      );
+    }
+  }
 }

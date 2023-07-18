@@ -22,7 +22,7 @@ export class CharacterPageComponent implements OnInit {
 
   public characterList: CharacterResult[] = [];
   public characters: CharacterResult[] = [];
-  public episodes: EpisodeResult[] = [];
+  // public episodes: EpisodeResult[] = [];
 
   public currentPage = 1;
   characterNotFound: boolean = false;
@@ -46,7 +46,6 @@ export class CharacterPageComponent implements OnInit {
 
   ngOnInit() {
     this.loadCharacters();
-    // this.onSearch()
   }
 
 

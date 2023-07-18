@@ -53,11 +53,11 @@ a {
 
 
 //---------- MEDIA QUERY ---------------
-// @media screen and (max-width: 679px) {
-//   .card{
-//   height: auto;
-//   }
-// }
+@media screen and (max-width: 679px) {  // DA TENERE
+  .card{
+  height: auto;
+  }
+}
 // @media screen and (max-width: 570px) {
 
 // }
